@@ -11,9 +11,19 @@
 ##  
 
 ### Alcance
--   Manejo del repositorio para mayor control en el versionamiento en el proyecto asegurando un trabajo en equipo mas ordenado 
+- Manejo del repositorio para mayor control en el versionamiento en el proyecto asegurando un trabajo en equipo mas ordenado 
 
-<div style="display:block;page-break-before:always;"></div>
+  
+
+**TEAM**
+
+Cristian Esteban Álvarez Peña - cristian-012@hotmail.com
+Pablo Giress Agudelo Martinez - pablogiress@gmail.com
+Carlos William Vasquez Vargas - willvasquez98@hotmail.com
+Diana Catalina Vasquez Rendon - catonga9823@gmail.com
+Yoraima Rincon Contreras - Yori.rincon@gmail.com
+
+
 
 ### Comandos
 
@@ -52,6 +62,8 @@ git push
 ```
 git clone "url HTTPS repositorio"
 ```
+
+
 
 #### Ramas [Para tener mas control en los cambios realizados]
 
