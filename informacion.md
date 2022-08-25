@@ -5,7 +5,7 @@
 
 | Versión | Fecha      | Revisado y Aprobado por | Descripción del Cambio |
 | ------- | ---------- | ----------------------- | ---------------------- |
-| 1.0.0   | 12/08/2021 | Carlos Vasquez          | Versión inicial        |
+| 1.0.1   | 25/08/2021 | Carlos Vasquez          | Versión inicial        |
 
 
 ##  
@@ -13,6 +13,12 @@
 ### Alcance
 - Manejo del repositorio para mayor control en el versionamiento en el proyecto asegurando un trabajo en equipo mas ordenado 
 
+  
+  
+  **Proyecto a realizar:**
+  *ID: 9 Categoría: Ciencia Nombre: Retos de experimentos científicos*
+  *Líder del grupo: Carlos William Vásquez Vargas*
+  
   
 
 **TEAM**
@@ -22,6 +28,15 @@ Pablo Giress Agudelo Martinez - pablogiress@gmail.com
 Carlos William Vasquez Vargas - willvasquez98@hotmail.com
 Diana Catalina Vasquez Rendon - catonga9823@gmail.com
 Yoraima Rincon Contreras - Yori.rincon@gmail.com
+
+
+
+**Roles:**
+Gestor del proyecto - Catalina Vasquez
+Gestor base de datos - Yoraima Rincon
+Desarrollador frontend - Cristian Alvarez
+Desarrollador backend - Giress Agudelo
+Tester - William Vasquez  
 
 
 
