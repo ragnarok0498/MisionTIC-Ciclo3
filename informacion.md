@@ -103,4 +103,12 @@ Se dejara por defecto una rama por default con el codigo principal que usemos:
 
 ### ANEXOS
 
+**Bootstrap**
+
+​	**Favicon**: https://icons.getbootstrap.com
+
+​	**Plantillas**: https://getbootstrap.com/docs/5.2/examples/
+
+
+
 Copyright®Todos los derechos reservados.

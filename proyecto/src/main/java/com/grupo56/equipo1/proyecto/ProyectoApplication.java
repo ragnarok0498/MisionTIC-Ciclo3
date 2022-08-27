@@ -23,7 +23,5 @@ public class ProyectoApplication {
 						"forward:/index.html");
 			}
 		};
-
 	}
-
 }
