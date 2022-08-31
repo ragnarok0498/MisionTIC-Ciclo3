@@ -5,7 +5,7 @@
 
 | Versión | Fecha      | Revisado y Aprobado por | Descripción del Cambio |
 | ------- | ---------- | ----------------------- | ---------------------- |
-| 1.0.1   | 25/08/2021 | Carlos Vasquez          | Versión inicial        |
+| 1.0.2   | 31/08/2021 | Carlos Vasquez          | Versión inicial        |
 
 
 ##  
@@ -37,6 +37,14 @@ Gestor base de datos - Yoraima Rincon
 Desarrollador frontend - Cristian Alvarez
 Desarrollador backend - Giress Agudelo
 Tester - William Vasquez  
+
+
+
+**RESOURCES**
+
+​	*Trello:* https://trello.com/b/j0sqmCoi/historias-de-usuario
+
+​	*Figma:* https://www.figma.com/files/project/65005017/Historias-de-usuario?fuid=1111679448129337116
 
 
 
