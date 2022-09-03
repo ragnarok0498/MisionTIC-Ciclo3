@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>La ciencia de manera divertida</title>
@@ -13,26 +14,14 @@
     <link href="assets/img/ciencia.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
@@ -45,7 +34,7 @@
         <h1 class="logo me-auto">
           <a href="index.html">La ciencia de manera divertida</a>
         </h1>
-        
+
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
@@ -107,7 +96,7 @@
 
     <main id="main">
       <!-- ======= About Us Section ======= -->
-      
+
       <!-- ======= Why Us Section ======= -->
       <section id="aprende" class="why-us section-bg">
         <div class="container" data-aos="fade-up">
@@ -149,7 +138,7 @@
                         Venenatis lectus magna fringilla urna porttitor rhoncus
                         dolor purus non.
                       </p>
-                      
+
                     </div>
                   </li>
 
@@ -221,18 +210,10 @@
       <section id="skills" class="skills">
         <div class="container" data-aos="fade-up">
           <div class="row">
-            <div
-              class="col-lg-6 d-flex align-items-center"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
+            <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
               <img src="assets/img/ciencia3.png" class="img-fluid" alt="" />
             </div>
-            <div
-              class="col-lg-6 pt-4 pt-lg-0 content"
-              data-aos="fade-left"
-              data-aos-delay="100"
-            >
+            <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
               <h3>
                 Registro de cantidad de experimentos segun su clasificacion
               </h3>
@@ -310,151 +291,96 @@
             </p>
           </div>
 
-          <ul
-            id="portfolio-flters"
-            class="d-flex justify-content-center"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+          <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">Todos</li>
             <li data-filter=".filter-app">Fisica</li>
             <li data-filter=".filter-card">Quimica</li>
             <li data-filter=".filter-web">Mecanica</li>
           </ul>
 
-          <div
-            class="row portfolio-container"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-img">
-                <img
-                  src="assets/img/portfolio/mecanica.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="assets/img/portfolio/mecanica.jpg" class="img-fluid" alt=""/>
               </div>
               <div class="portfolio-info">
                 <h4>Mecanica</h4>
                 <p>App</p>
-                <a
-                  href="portfolio-details.html"
-                  class="details-link"
-                  title="More Details"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-img">
-                <img
-                  src="assets/img/portfolio/electromagnetismo.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="assets/img/portfolio/electromagnetismo.jpg" class="img-fluid" alt=""/>
               </div>
               <div class="portfolio-info">
                 <h4>Electromagnetismo</h4>
                 <p>App</p>
-                <a
-                  href="portfolio-details.html"
-                  class="details-link"
-                  title="More Details"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-img">
-                <img
-                  src="assets/img/portfolio/energia.png"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="assets/img/portfolio/energia.png" class="img-fluid" alt=""/>
               </div>
               <div class="portfolio-info">
                 <h4>Energia</h4>
                 <p>App</p>
 
-                <a
-                  href="portfolio-details.html"
-                  class="details-link"
-                  title="More Details"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-img">
-                <img
-                  src="assets/img/portfolio/relatividad.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="assets/img/portfolio/relatividad.jpg" class="img-fluid" alt=""/>
               </div>
               <div class="portfolio-info">
                 <h4>Relatividad</h4>
                 <p>App</p>
 
-                <a
-                  href="portfolio-details.html"
-                  class="details-link"
-                  title="More Details"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
             </div>
 
 
-
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
               <div class="portfolio-img">
-                <img
-                  src="assets/img/portfolio/hidraulica.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="assets/img/portfolio/hidraulica.jpg" class="img-fluid" alt=""/>
               </div>
               <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>
 
-                <a
-                  href="portfolio-details.html"
-                  class="details-link"
-                  title="More Details"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
             </div>
 
-
-
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-img">
-                <img
-                  src="assets/img/portfolio/liquidos.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="assets/img/portfolio/liquidos.jpg" class="img-fluid" alt=""/>
               </div>
               <div class="portfolio-info">
                 <h4>Card 2</h4>
                 <p>Card</p>
 
-                <a
-                  href="portfolio-details.html"
-                  class="details-link"
-                  title="More Details"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
-            </div> 
-            
+            </div>
 
           </div>
         </div>
@@ -473,23 +399,15 @@
 
           <div class="row">
             <div class="col-lg-6">
-              <div
-                class="member d-flex align-items-start"
-                data-aos="zoom-in"
-                data-aos-delay="100"
-              >
+              <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
                 <div class="pic">
-                  <img
-                    src="assets/img/team/team-1.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""/>
                 </div>
                 <div class="member-info">
                   <h4>Catalina Vasquez</h4>
                   <span>Gestora del Proyecto</span>
                   <p>
-                    
+
                   </p>
                   <div class="social">
                     <a href=""><i class="ri-twitter-fill"></i></a>
@@ -502,23 +420,15 @@
             </div>
 
             <div class="col-lg-6 mt-4 mt-lg-0">
-              <div
-                class="member d-flex align-items-start"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-              >
+              <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
                 <div class="pic">
-                  <img
-                    src="assets/img/team/"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <img src="assets/img/team/" class="img-fluid" alt=""/>
                 </div>
                 <div class="member-info">
                   <h4>Yoraima Rincon</h4>
                   <span>Gestora de Bases de datos</span>
                   <p>
-                    
+
                   </p>
                   <div class="social">
                     <a href=""><i class="ri-twitter-fill"></i></a>
@@ -531,23 +441,15 @@
             </div>
 
             <div class="col-lg-6 mt-4">
-              <div
-                class="member d-flex align-items-start"
-                data-aos="zoom-in"
-                data-aos-delay="300"
-              >
+              <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
                 <div class="pic">
-                  <img
-                    src="assets/img/team/team-3.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""/>
                 </div>
                 <div class="member-info">
                   <h4>Cristian Alvarez</h4>
                   <span>Desarrollador Frontend</span>
                   <p>
-                    
+
                   </p>
                   <div class="social">
                     <a href=""><i class="ri-twitter-fill"></i></a>
@@ -560,23 +462,15 @@
             </div>
 
             <div class="col-lg-6 mt-4">
-              <div
-                class="member d-flex align-items-start"
-                data-aos="zoom-in"
-                data-aos-delay="400"
-              >
+              <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
                 <div class="pic">
-                  <img
-                    src="assets/img/team/team-4.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""/>
                 </div>
                 <div class="member-info">
                   <h4>Pablo Agudelo</h4>
                   <span>Desarrollador Backend</span>
                   <p>
-                    
+
                   </p>
                   <div class="social">
                     <a href=""><i class="ri-twitter-fill"></i></a>
@@ -588,19 +482,11 @@
               </div>
               </div>
             </div>
-            
+
              <div class="col-lg-6 mt-4">
-              <div
-                class="member d-flex align-items-start"
-                data-aos="zoom-in"
-                data-aos-delay="400"
-              >
+              <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
                 <div class="pic">
-                  <img
-                    src="assets/img/team/team-4.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
+                  <img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""/>
                 </div>
                 <div class="member-info">
                   <h4>William Vasquez</h4>
@@ -613,7 +499,9 @@
                     <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
                   </div>
                 </div>
-                
+              </div>
+             </div>
+        </div>
       </section>
       <!-- End Team Section -->
 
@@ -660,12 +548,7 @@
 
                 <div class="form-group">
                   <label for="name">Comentario</label>
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    rows="10"
-                    required
-                  ></textarea>
+                  <textarea class="form-control" name="message" rows="10" required></textarea>
                 </div>
                 <div class="my-3">
                   <div class="loading">Cargando</div>
@@ -683,13 +566,11 @@
         </div>
       </section>
     </main>
-    
+
    <footer id="footer">
-      
       <div class="footer-top">
         <div class="container">
           <div class="row">
-            
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Nuestras redes sociales</h4>
               <p>
@@ -698,9 +579,7 @@
               <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"
-                  ><i class="bx bxl-instagram"></i
-                ></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
@@ -710,18 +589,15 @@
 
       <div class="container footer-bottom clearfix">
         <div class="copyright">
-          &copy; <strong><span>Todos los derechos reservados</span></strong
-          >.
+          Copyright &copy; <strong><span>Todos los derechos reservados</span></strong>.
         </div>
         </div>
     </footer>
-    
+
     <div id="preloader"></div>
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
