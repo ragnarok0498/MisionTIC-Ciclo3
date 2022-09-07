@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class PublicacionService implements IPublicacionService {
-
+/*
     @Autowired
     private IPublicacion data;
 
@@ -33,4 +33,6 @@ public class PublicacionService implements IPublicacionService {
     public void delete(int id){
 
     }
+
+ */
 }

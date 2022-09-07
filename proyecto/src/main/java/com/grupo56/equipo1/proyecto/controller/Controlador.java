@@ -13,7 +13,7 @@ import java.util.List;
 @Controller
 @RequestMapping
 public class Controlador {
-
+/*
     @Autowired //interface de publicacionService
     private IPublicacionService service;
 
@@ -24,4 +24,6 @@ public class Controlador {
         model.addAttribute("publicacion", publicacion); //enviar toda la lista o el objeto al formulario
         return "panel";
     }
+
+ */
 }
