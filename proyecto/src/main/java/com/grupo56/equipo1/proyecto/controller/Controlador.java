@@ -22,6 +22,6 @@ public class Controlador {
     public String listar(Model model){
         List<Publicacion>publicacion = service.listar(); //este metodo tiene un valor de retorno de tipo lista
         model.addAttribute("publicacion", publicacion); //enviar toda la lista o el objeto al formulario
-        return "index";
+        return "panel";
     }
 }

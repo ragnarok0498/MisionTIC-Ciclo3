@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Iniciar sesion</title>
@@ -13,26 +14,14 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
@@ -40,11 +29,7 @@
     <link href="assets/css/style.css" rel="stylesheet" />
   </head>
 
-  <body
-    data-aos-easing="ease-in-out"
-    data-aos-duration="1000"
-    data-aos-delay="0"
-  >
+  <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center">
@@ -75,12 +60,7 @@
               <br />
               <br />
               <div class="form-outline mb-4">
-                <label
-                  class="form-label"
-                  for="form2Example1"
-                  style="margin-left: 0px"
-                  >Usuario</label
-                >
+                <label class="form-label" for="form2Example1" style="margin-left: 0px">Usuario</label>
                 <input type="email" id="form2Example1" class="form-control" />
                 <div class="form-notch">
                   <div class="form-notch-leading" style="width: 9px"></div>
@@ -91,17 +71,8 @@
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <label
-                  class="form-label"
-                  for="form2Example2"
-                  style="margin-left: 0px"
-                  >Contraseña</label
-                >
-                <input
-                  type="password"
-                  id="form2Example2"
-                  class="form-control"
-                />
+                <label class="form-label" for="form2Example2" style="margin-left: 0px">Contraseña</label>
+                <input type="password" id="form2Example2" class="form-control"/>
                 <div class="form-notch">
                   <div class="form-notch-leading" style="width: 9px"></div>
                   <div class="form-notch-middle" style="width: 64px"></div>
@@ -114,13 +85,7 @@
                 <div class="col d-flex justify-content-center">
                   <!-- Checkbox -->
                   <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="form2Example31"
-                      checked=""
-                    />
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked=""/>
                     <label class="form-check-label" for="form2Example31">
                       Recordar datos
                     </label>
@@ -134,12 +99,12 @@
               </div>
 
               <!-- Submit button -->
-              <button
-                type="button"
-                class="btn btn-primary btn-block mb-4"
-                style=""
-              >
+              <button type="button" class="btn btn-primary btn-block mb-4" style="">
                 Iniciar
+              </button>
+
+              <button type="button" class="btn btn-primary btn-block mb-4" style="">
+                <a href="panel.html">Panel</a>
               </button>
             </form>
           </section>
@@ -168,18 +133,12 @@
       </div>
 
       <div class="container footer-bottom clearfix">
-        <div class="copyright">
-          © <strong><span>Todos los derechos reservados</span></strong
-          >.
+        <div class="copyright">© <strong><span>Todos los derechos reservados</span></strong>.
         </div>
       </div>
     </footer>
 
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
