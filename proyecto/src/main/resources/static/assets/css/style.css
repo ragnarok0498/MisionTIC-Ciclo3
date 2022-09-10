@@ -104,6 +104,8 @@ h6 {
   opacity: 1;
 }
 
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1037,6 +1039,13 @@ section {
 
 .portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
+}
+
+.portfolio-info .bx {
+  border: none;
+  background-color: rgba(67, 96, 148, 0.887);
+  cursor: pointer;
+  color: whitesmoke;
 }
 
 /*--------------------------------------------------------------

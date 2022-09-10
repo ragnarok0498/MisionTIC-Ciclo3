@@ -232,122 +232,149 @@
     <!-- ======= experimentos Section ======= -->
     <section id="experimentos" class="portfolio">
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Clasificacion de experimentos</h2>
-                <p>
-                    Este es el espacio en el que podemos averiguar cómo experimentar en el mundo de la ciencia, el
-                    espacio donde todo puede salir muy bien o muy mal.
-                </p>
+          <div class="section-title">
+            <h2>Clasificacion de experimentos</h2>
+            <p>
+              Este es el espacio en el que podemos averiguar cómo experimentar en el mundo de la ciencia, el espacio donde todo puede salir muy bien o muy mal.
+            </p>
+          </div>
+
+          <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">Todos</li>
+            <li data-filter=".filter-app">Fisica</li>
+            <li data-filter=".filter-card">Quimica</li>
+            <li data-filter=".filter-web">Mecanica</li>
+          </ul>
+
+          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio/mecanica.jpg" class="img-fluid" alt=""/>
+              </div>
+              <div class="portfolio-info">
+                <h4>Mecanica</h4>
+                <p>App</p>
+                <a href="portfolio-details.html" class="details-link" title="Mas información" >
+                  <button onclick="Swal.fire({
+                    title: 'Experimento 1',
+                    text: 'Texto sobre el experimento',
+                    imageUrl: 'assets/img/portfolio/mecanica.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image'})"
+                    class="bx bx-link"></i>
+                </a>
+              </div>
             </div>
 
-            <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                <li data-filter="*" class="filter-active">Todos</li>
-                <li data-filter=".filter-app">Fisica</li>
-                <li data-filter=".filter-card">Quimica</li>
-                <li data-filter=".filter-web">Mecanica</li>
-            </ul>
-
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/mecanica.jpg" class="img-fluid" alt=""/>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Mecanica</h4>
-                        <p>App</p>
-                        <a href="portfolio-details.html" class="details-link" title="More Details">
-                            <i class="bx bx-link"></i>
-                        </a>
-                        <a href="portfolio-details.html" class="details-link" title="Mas información">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/electromagnetismo.jpg" class="img-fluid" alt=""/>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Electromagnetismo</h4>
-                        <p>App</p>
-                        <a href="portfolio-details.html" class="details-link" title="More Details">
-                            <i class="bx bx-link"></i>
-                        </a>
-                        <a href="portfolio-details.html" class="details-link" title="Mas información">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/energia.png" class="img-fluid" alt=""/>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Energia</h4>
-                        <p>App</p>
-                        <a href="portfolio-details.html" class="details-link" title="More Details">
-                            <i class="bx bx-link"></i>
-                        </a>
-                        <a href="portfolio-details.html" class="details-link" title="Mas información">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/relatividad.jpg" class="img-fluid" alt=""/>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Relatividad</h4>
-                        <p>App</p>
-                        <a href="portfolio-details.html" class="details-link" title="More Details">
-                            <i class="bx bx-link"></i>
-                        </a>
-                        <a href="portfolio-details.html" class="details-link" title="Mas información">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/hidraulica.jpg" class="img-fluid" alt=""/>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Web 3</h4>
-                        <p>Web</p>
-                        <a href="portfolio-details.html" class="details-link" title="More Details">
-                            <i class="bx bx-link"></i>
-                        </a>
-                        <a href="portfolio-details.html" class="details-link" title="Mas información">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/liquidos.jpg" class="img-fluid" alt=""/>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Card 2</h4>
-                        <p>Card</p>
-                        <a href="portfolio-details.html" class="details-link" title="More Details">
-                            <i class="bx bx-link"></i>
-                        </a>
-                        <a href="portfolio-details.html" class="details-link" title="Mas información">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio/electromagnetismo.jpg" class="img-fluid" alt=""/>
+              </div>
+              <div class="portfolio-info">
+                <h4>Electromagnetismo</h4>
+                <p>App</p>
+                <a href="portfolio-details.html" class="details-link" title="Mas información" >
+                  <button onclick="Swal.fire({
+                    title: 'Experimento 2',
+                    text: 'Texto sobre el experimento',
+                    imageUrl: 'assets/img/portfolio/mecanica.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image'})"
+                    class="bx bx-link"></i>
+                </a>
+              </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio/energia.png" class="img-fluid" alt=""/>
+              </div>
+              <div class="portfolio-info">
+                <h4>Energia</h4>
+                <p>App</p>
+
+                <a href="portfolio-details.html" class="details-link" title="Mas información" >
+                  <button onclick="Swal.fire({
+                    title: 'Experimento 3',
+                    text: 'Texto sobre el experimento',
+                    imageUrl: 'assets/img/portfolio/mecanica.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image'})"
+                    class="bx bx-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio/relatividad.jpg" class="img-fluid" alt=""/>
+              </div>
+              <div class="portfolio-info">
+                <h4>Relatividad</h4>
+                <p>App</p>
+
+                <a href="portfolio-details.html" class="details-link" title="Mas información" >
+                  <button onclick="Swal.fire({
+                    title: 'Experimento 4',
+                    text: 'Texto sobre el experimento',
+                    imageUrl: 'assets/img/portfolio/mecanica.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image'})"
+                    class="bx bx-link"></i>
+                </a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio/hidraulica.jpg" class="img-fluid" alt=""/>
+              </div>
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+
+                <a href="portfolio-details.html" class="details-link" title="Mas información" >
+                  <button onclick="Swal.fire({
+                    title: 'Experimento 5',
+                    text: 'Texto sobre el experimento',
+                    imageUrl: 'assets/img/portfolio/mecanica.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image'})"
+                    class="bx bx-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-img">
+                <img src="assets/img/portfolio/liquidos.jpg" class="img-fluid" alt=""/>
+              </div>
+              <div class="portfolio-info">
+                <h4>Card 2</h4>
+                <p>Card</p>
+
+                <a href="portfolio-details.html" class="details-link" title="Mas información" >
+                  <button onclick="Swal.fire({
+                    title: 'Experimento 6',
+                    text: 'Texto sobre el experimento',
+                    imageUrl: 'assets/img/portfolio/mecanica.jpg',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image'})"
+                    class="bx bx-link"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
-    </section>
+      </section>
     <!-- End experimentos Section -->
 
     <!-- ======= Team Section ======= -->
@@ -557,5 +584,6 @@
 
 <!-- Template Main JS File -->
 <script src="../static/assets/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
