@@ -2,12 +2,11 @@ package com.grupo56.equipo1.proyecto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
+@SpringBootApplication
 public class ProyectoApplication {
 
 	public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class ProyectoApplication {
 			@Override
 			public void addViewControllers(ViewControllerRegistry registry) {
 				registry.addViewController("/").setViewName(
-						"forward:..templates/index.html");
+						"forward:index.html");
 			}
 		};
 	}
