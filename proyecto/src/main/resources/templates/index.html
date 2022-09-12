@@ -18,15 +18,15 @@
           rel="stylesheet"/>
 
     <!-- Vendor CSS Files -->
-    <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet"/>
-    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
-    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"/>
-    <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
-    <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet"/>
-    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet"/>
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet"/>
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
 
-    <link href="../static/assets/css/style.css" rel="stylesheet"/>
+    <link href="/assets/css/style.css" rel="stylesheet"/>
 
 </head>
 
@@ -46,7 +46,7 @@
                     <a class="nav-link scrollto" href="#team">Nuestro equipo</a>
                 </li>
                 <li>
-                    <a class="getstarted scrollto" href="login.html">Iniciar sesion</a>
+                    <a class="getstarted scrollto" href="#" th:href="@{/login}">Iniciar sesion</a>
                 </li>
 
             </ul>
@@ -165,7 +165,7 @@
                     </div>
 
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                         style="background-image: url('assets/img/ciencia2.png')" data-aos="zoom-in"
+                         style="background-image: url('/assets/img/ciencia2.png')" data-aos="zoom-in"
                          data-aos-delay="150">
                         &nbsp;
                     </div>
@@ -195,7 +195,7 @@
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/mecanica.jpg" class="img-fluid" alt=""/>
+                        <img src="/assets/img/portfolio/mecanica.jpg" class="img-fluid" alt=""/>
                     </div>
                     <div class="portfolio-info">
                         <h4>Mecanica</h4>
@@ -204,7 +204,7 @@
                             <button onclick="Swal.fire({
                                 title: 'Experimento 1',
                                 text: 'Texto sobre el experimento',
-                                imageUrl: '../static/assets/img/portfolio/mecanica.jpg',
+                                imageUrl: '/assets/img/portfolio/mecanica.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: 'Custom image'})"
@@ -216,7 +216,7 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/electromagnetismo.jpg" class="img-fluid" alt=""/>
+                        <img src="/assets/img/portfolio/electromagnetismo.jpg" class="img-fluid" alt=""/>
                     </div>
                     <div class="portfolio-info">
                         <h4>Electromagnetismo</h4>
@@ -225,7 +225,7 @@
                             <button onclick="Swal.fire({
                                 title: 'Experimento 2',
                                 text: 'Texto sobre el experimento',
-                                imageUrl: '../static/assets/img/portfolio/electromagnetismo.jpg',
+                                imageUrl: '/assets/img/portfolio/electromagnetismo.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: 'Custom image'})"
@@ -237,7 +237,7 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/energia.png" class="img-fluid" alt=""/>
+                        <img src="/assets/img/portfolio/energia.png" class="img-fluid" alt=""/>
                     </div>
                     <div class="portfolio-info">
                         <h4>Energia</h4>
@@ -247,7 +247,7 @@
                             <button onclick="Swal.fire({
                                 title: 'Experimento 3',
                                 text: 'Texto sobre el experimento',
-                                imageUrl: '../static/assets/img/portfolio/energia.png',
+                                imageUrl: '/assets/img/portfolio/energia.png',
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: 'Custom image'})"
@@ -259,7 +259,7 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/relatividad.jpg" class="img-fluid" alt=""/>
+                        <img src="/assets/img/portfolio/relatividad.jpg" class="img-fluid" alt=""/>
                     </div>
                     <div class="portfolio-info">
                         <h4>Relatividad</h4>
@@ -269,7 +269,7 @@
                             <button onclick="Swal.fire({
                                 title: 'Experimento 4',
                                 text: 'Texto sobre el experimento',
-                                imageUrl: '../static/assets/img/portfolio/relatividad.jpg',
+                                imageUrl: '/assets/img/portfolio/relatividad.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: 'Custom image'})"
@@ -282,7 +282,7 @@
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-img">
-                        <img src="../static/assets/img/portfolio/hidraulica.jpg" class="img-fluid" alt=""/>
+                        <img src="/assets/img/portfolio/hidraulica.jpg" class="img-fluid" alt=""/>
                     </div>
                     <div class="portfolio-info">
                         <h4>Web 3</h4>
@@ -291,7 +291,7 @@
                             <button onclick="Swal.fire({
                                 title: 'Experimento 5',
                                 text: 'Texto sobre el experimento',
-                                imageUrl: '../static/assets/img/portfolio/hidraulica.jpg',
+                                imageUrl: '/assets/img/portfolio/hidraulica.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: 'Custom image'})"
@@ -312,7 +312,7 @@
                             <button onclick="Swal.fire({
                                 title: 'Experimento 6',
                                 text: 'Texto sobre el experimento',
-                                imageUrl: '../static/assets/img/portfolio/liquidos.jpg',
+                                imageUrl: '/assets/img/portfolio/liquidos.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: 'Custom image'})"
@@ -343,7 +343,7 @@
                 <div class="col-lg-6">
                     <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
                         <div class="pic">
-                            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""/>
+                            <img src="/assets/img/team/team-1.jpg" class="img-fluid" alt=""/>
                         </div>
                         <div class="member-info">
                             <h4>Catalina Vasquez</h4>
@@ -364,7 +364,7 @@
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
                         <div class="pic">
-                            <img src="assets/img/team/" class="img-fluid" alt=""/>
+                            <img src="/assets/img/team/" class="img-fluid" alt=""/>
                         </div>
                         <div class="member-info">
                             <h4>Yoraima Rincon</h4>
@@ -525,17 +525,17 @@
 </a>
 
 <!-- Vendor JS Files -->
-<script src="../static/assets/vendor/aos/aos.js"></script>
-<script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="../static/assets/vendor/waypoints/noframework.waypoints.js"></script>
-<script src="../static/assets/vendor/php-email-form/validate.js"></script>
+<script src="/assets/vendor/aos/aos.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="/assets/vendor/php-email-form/validate.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- Template Main JS File -->
-<script src="../static/assets/js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -7,14 +7,14 @@
 
   <title> Panel control publicaciones </title>
 
-  <link rel="stylesheet" href="../../static/vendors/feather/feather.css">
-  <link rel="stylesheet" href="../../static/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../static/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="../../static/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="../../static/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="../../static/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../../static/css/style.css">
-  <link href="../../static/assets/img/icono.ico" rel="icon" />
+  <link rel="stylesheet" href="/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/assets/img/icono.ico" rel="icon" />
 
 </head>
 
@@ -30,10 +30,10 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="panel.html">
-            <img src="../../static/assets/img/icono.ico" alt="logo" />
+            <img src="/assets/img/icono.ico" alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="panel.html">
-            <img src="../../static/assets/img/icono.min.ico" alt="logo"/>
+            <img src="/assets/img/icono.min.ico" alt="logo"/>
           </a>
         </div>
       </div>
@@ -72,7 +72,7 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="publicar_entrada.html">Crear nueva entrada</a></li>
+                <li class="nav-item"><a class="nav-link" href="posts/newpost">Crear nueva entrada</a></li>
               </ul>
             </div>
             <div class="collapse" id="form-elements">
@@ -147,23 +147,21 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <tr>
+                      <tr th:each="post : ${posts}">
                         <td class="py-1">
                           <img src="../../images/faces/face1.jpg" alt="image"/>
                         </td>
-                        <td>
+                        <td th:text="${post.titulo}">
                           Herman Beck
                         </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                        <td th:text="${post.resumen}">
+                          resumen
                         </td>
-                        <td>
-                          $ 77.99
+                        <td th:text="${post.descripcion}">
+                          descripcion
                         </td>
-                        <td>
-                          May 15, 2015
+                        <td th:text="${post.idAdmin}">
+                          id admin
                         </td>
                         <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
@@ -175,39 +173,6 @@
                             <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm">
                               <abbr title="Ocultar publicacion">
                                 <i class="mdi mdi-eye-off me-2"></i>
-                              </abbr>
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="py-1">
-                          <img src="../../images/faces/face2.jpg" alt="image"/>
-                        </td>
-                        <td>
-                          Messsy Adam
-                        </td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </td>
-                        <td>
-                          $245.30
-                        </td>
-                        <td>
-                          July 1, 2015
-                        </td>
-                        <td>
-                          <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-secondary  btn-info btn-sm">
-                              <abbr title="Editar publicacion">
-                              <i class="mdi mdi-tooltip-edit me-2"></i>
-                              </abbr>
-                            </button>
-                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm">
-                              <abbr title="Ocultar publicacion">
-                              <i class="mdi mdi-eye-off me-2"></i>
                               </abbr>
                             </button>
                           </div>
@@ -295,10 +260,10 @@
     </div>
   </div>
 
-  <script src="../../static/vendors/js/vendor.bundle.base.js"></script>
-  <script src="../../static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="../../static/js/off-canvas.js"></script>
-  <script src="../../static/js/hoverable-collapse.js"></script>
+  <script src="/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/hoverable-collapse.js"></script>
 
 </body>
 
