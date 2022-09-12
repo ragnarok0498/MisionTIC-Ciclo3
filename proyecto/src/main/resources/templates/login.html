@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Iniciar sesion</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/assets/img/icono.ico" rel="icon" />
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/img/ciencia.png" rel="icon" />
+  </head>
+
+  <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-inner-pages">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto">
+          <a href="index.html">La ciencia de manera divertida</a>
+        </h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ======= Breadcrumbs ======= -->
+      <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Regresar</a></li>
+          </ol>
+          <h2>Iniciar sesión de Administrador</h2>
+        </div>
+      </section>
+
+      <section class="inner-page">
+        <div class="bg-white border rounded-5">
+          <section class="w-100 p-4 d-flex justify-content-center pb-4">
+            <form style="width: 22rem" action="#" th:action="@{/check}" th:object="${credenciales}" method="post">
+              <!-- Email input -->
+              <br />
+              <br />
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1" style="margin-left: 0px">Usuario</label>
+                <input type="email" id="form2Example1" class="form-control" th:field="*{email}" />
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px"></div>
+                  <div class="form-notch-middle" style="width: 88.8px"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2" style="margin-left: 0px">Contraseña</label>
+                <input type="password" id="form2Example2" class="form-control" th:field="*{password}" />
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px"></div>
+                  <div class="form-notch-middle" style="width: 64px"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+
+              <!--Alertas-->
+              <div th:if="${error != null}" class="alert alert-danger" role="alert">Datos incorrectos!</div>
+
+
+
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked=""/>
+                    <label class="form-check-label" for="form2Example31">
+                      Recordar datos
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="#!">¿Has olvidado la contraseña?</a>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4" >
+                Iniciar
+              </button>
+              <button class="btn btn-primary btn-block mb-4" >
+                <a href="panel.html">Panel</a>
+              </button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Nuestras redes sociales</h4>
+              <p>Sígannos en nuestras redes sociales</p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"
+                  ><i class="bx bxl-instagram"></i
+                ></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom clearfix">
+        <div class="copyright">Copyright © <strong><span>Todos los derechos reservados</span></strong>.
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+  </body>
+</html>
