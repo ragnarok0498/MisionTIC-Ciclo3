@@ -20,44 +20,15 @@
 <body>
 <div class="container-scroller">
 
-  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-      <div class="me-3">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-      </div>
-      <div>
-        <a class="navbar-brand brand-logo" href="panel.html">
-          <img src="/assets/img/icono.ico" alt="logo" />
-        </a>
-        <a class="navbar-brand brand-logo-mini" href="panel.html">
-          <img src="/assets/img/icono.min.ico" alt="logo"/>
-        </a>
-      </div>
-    </div>
-    <div class="navbar-menu-wrapper d-flex align-items-top">
-      <ul class="navbar-nav">
-        <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-          <h1 class="welcome-text">Buen día, <span class="text-black fw-bold">Administrador</span></h1>
-          <h3 class="welcome-sub-text">Tus actualizaciones de esta semana </h3>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto">
-        <a class="dropdown-item" href="#" th:href="index.html"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Cerrar sesion</a>
-      </ul>
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
-        <span class="mdi mdi-menu"></span>
-      </button>
-    </div>
-  </nav>
+  <div th:replace="fragments/navbarPanel :: navbar">
+  </div>
 
   <div class="container-fluid page-body-wrapper">
 
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="../panel.html">
+          <a class="nav-link" href="panel.html">
             <i class="mdi mdi-grid-large menu-icon"></i>
             <span class="menu-title">Dashboard</span>
           </a>

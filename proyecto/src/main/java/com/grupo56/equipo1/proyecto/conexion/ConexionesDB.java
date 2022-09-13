@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 public class ConexionesDB {
 
-        String strConexionDB = "jdbc:mysql://127.0.0.1:8080/ciencia.db"; // variable para conectar con la base de datos
+        String strConexionDB = "jdbc:mysql://localhost:3306/db_ciencia"; // variable para conectar con la base de datos
         Connection conn = null ;
 
         public ConexionesDB(){

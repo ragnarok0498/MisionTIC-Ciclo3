@@ -29,7 +29,7 @@ Carlos William Vasquez Vargas - willvasquez98@hotmail.com
 Diana Catalina Vasquez Rendon - catonga9823@gmail.com
 Yoraima Rincon Contreras - Yori.rincon@gmail.com
 
-
+cristian-012@hotmail.com pablogiress@gmail.com willvasquez98@hotmail.com catonga9823@gmail.com yori.rincon@gmail.com
 
 **Roles:**
 Gestor del proyecto - Catalina Vasquez
