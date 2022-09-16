@@ -30,7 +30,7 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/check")
+    @PostMapping("/panel")
     public String Check(@ModelAttribute(name="credenciales") Credenciales credenciales){
 
         if(credenciales.getEmail().equals("pablogiress@gmail.com") && credenciales.getPassword().equals("234")){
