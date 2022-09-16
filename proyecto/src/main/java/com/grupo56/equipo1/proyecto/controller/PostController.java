@@ -32,6 +32,7 @@ public class PostController {
     }
 
 
+    //Creamos nuevo post
     @PostMapping("/posts/newpost")
     public String guardarPost(@ModelAttribute("post") Post post){
         postService.guardarPost(post);
