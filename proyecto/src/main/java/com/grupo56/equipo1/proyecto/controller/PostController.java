@@ -32,10 +32,10 @@ public class PostController {
     }
 
 
-    @PostMapping("/posts")
+    @PostMapping("/posts/newpost")
     public String guardarPost(@ModelAttribute("post") Post post){
         postService.guardarPost(post);
-        return "redirect:posts";
+        return "redirect:/posts/newpost";
     } 
     
 }

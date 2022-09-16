@@ -1,6 +1,8 @@
 package com.grupo56.equipo1.proyecto.model;
 import javax.persistence.Entity;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +21,7 @@ public class Post {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "estado")
+    @Column(name = "estado", nullable = true)
     private String estado;
 
     @Column(name = "id_admin")
