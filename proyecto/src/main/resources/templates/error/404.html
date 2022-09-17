@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+	<title>404 - Not Found</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+    <link href="/css/errores.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+	<div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404"></div>
+            <h2>Error 404:</h1>
+			<h1 th:text="${error}"> - <span th:text="${status}"></span></h1></h1>
+			<h2 th:text="${message}">Oops! Pagina no encontrada</h2>
+            <p th:text="${timestamp}">Datepicker</p>
+			<p th:text="${exception}">Tracer</p>
+
+			<a href="/">Volver a la pagina principal</a>
+		</div>
+	</div>
+</body>
+</html>

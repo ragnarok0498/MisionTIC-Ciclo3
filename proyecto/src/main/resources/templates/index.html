@@ -10,8 +10,8 @@
     <meta content="" name="keywords"/>
 
     <!-- Favicons -->
-    <link href="../static/assets/img/icono.ico" rel="icon"/>
-    <link href="../static/assets/img/ciencia.png" rel="apple-touch-icon"/>
+    <link href="/assets/img/icono.ico" rel="icon"/>
+    <link href="/assets/img/ciencia.png" rel="apple-touch-icon"/>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -193,17 +193,19 @@
             </ul>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                
+                
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app" th:each="post : ${posts}" >
                     <div class="portfolio-img">
                         <img src="/assets/img/portfolio/mecanica.jpg" class="img-fluid" alt=""/>
                     </div>
                     <div class="portfolio-info">
-                        <h4>Mecanica</h4>
-                        <p>App</p>
+                        <h4 th:text="${post.titulo}"></h4>
+                        <p th:text="${post.resumen}">App</p>
                         <a class="details-link" title="Mas información">
                             <button onclick="Swal.fire({
-                                title: 'Experimento 1',
-                                text: 'Texto sobre el experimento',
+                                title: '<h4 th:text='${post.titulo}'></h4>',
+                                text: '<p th:text='${post.descripcion}'></p>',
                                 imageUrl: '/assets/img/portfolio/mecanica.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
@@ -213,6 +215,9 @@
                         </a>
                     </div>
                 </div>
+
+
+                
 
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-img">

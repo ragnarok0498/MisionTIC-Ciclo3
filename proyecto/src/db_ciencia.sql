@@ -1,7 +1,3 @@
-CREATE DATABASE ciencia;
-
-USE ciencia;
-
 CREATE TABLE administrador (
 	id_admin	INTEGER NOT NULL UNIQUE AUTO_INCREMENT,
 	nombre	VARCHAR(30) NOT NULL,
@@ -34,6 +30,5 @@ CREATE TABLE comentarios (
 	FOREIGN KEY(id_comentario) REFERENCES publicaciones(id_publicacion),
 	PRIMARY KEY(id_comentario)
 );
-
 
 

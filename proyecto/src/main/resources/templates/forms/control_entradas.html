@@ -69,7 +69,7 @@
                       <tbody>
                       <tr th:each="post : ${posts}">
                         <td class="py-1">
-                          <img src="../../images/faces/face1.jpg" alt="image"/>
+                          <img src="/images/faces/face1.jpg" alt="image"/>
                         </td>
                         <td th:text="${post.titulo}">
                           Herman Beck
@@ -85,15 +85,15 @@
                         </td>
                         <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-secondary  btn-info btn-sm">
-                              <abbr title="Editar publicacion">
-                                <i class="mdi mdi-tooltip-edit me-2"></i>
-                              </abbr>
+                            <button type="button" class="btn btn-outline-secondary  btn-info btn-sm" title="Editar publicacion" onclick="">                             
+                                <i class="mdi mdi-tooltip-edit me-2"></i>                          
                             </button>
-                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm">
-                              <abbr title="Ocultar publicacion">
+                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar publicacion" onclick="Swal.fire(
+                              'Buen trabajo!',
+                              'Se ha ocultado la publicacion!',
+                              'info'
+                            )">                            
                                 <i class="mdi mdi-eye-off me-2"></i>
-                              </abbr>
                             </button>
                           </div>
                         </td>
@@ -133,29 +133,30 @@
                           <td>12 May 2017</td>
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-outline-secondary  btn-success btn-sm">
-                                <abbr title="Activar publicacion">
-                                  <i class="mdi mdi-eye me-2"></i>
-                                </abbr>
-                              </button>
-                              <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm">
-                                <abbr title="Eliminar publicacion">
-                                  <i class="mdi mdi-delete-forever me-2"></i>
-                                </abbr>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Messsy</td>
-                          <td>53275532</td>
-                          <td>15 May 2017</td>
-                          <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                              <button type="button" class="btn btn-outline-secondary  btn-success btn-sm">
+                              <button type="button" class="btn btn-outline-secondary  btn-success btn-sm" title="Activar publicacion" onclick="Swal.fire(
+                                'Buen trabajo!',
+                                'La publicacion ha sido activada!',
+                                'success'
+                              )">
                                 <i class="mdi mdi-eye me-2"></i>
                               </button>
-                              <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm">
+                              <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm" title="Eliminar publicacion" onclick="Swal.fire({
+                                title: 'Desea Eliminar esta publicacion?',
+                                text: 'Para eliminar haga click en aceptar de lo contrario en cancelar',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Si, borrar esto!'
+                              }).then((result) => {
+                                if (result.isConfirmed) {
+                                  Swal.fire(
+                                    'Eliminar!',
+                                    'La publicacion ha sido eliminada',
+                                    'success'
+                                  )
+                                }
+                              })">
                                 <i class="mdi mdi-delete-forever me-2"></i>
                               </button>
                             </div>
@@ -180,6 +181,7 @@
     </div>
   </div>
 
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/vendors/js/vendor.bundle.base.js"></script>
   <script src="/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
   <script src="/js/off-canvas.js"></script>

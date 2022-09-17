@@ -6,14 +6,14 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title> Panel control comentarios </title>
 
-    <link rel="stylesheet" href="../../static/vendors/feather/feather.css">
-    <link rel="stylesheet" href="../../static/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../static/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../../static/vendors/typicons/typicons.css">
-    <link rel="stylesheet" href="../../static/vendors/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="../../static/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link href="../../static/assets/img/icono.ico" rel="icon" />
+    <link rel="stylesheet" href="/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="/assets/img/icono.ico" rel="icon" />
 
 </head>
 
@@ -44,7 +44,7 @@
                                         <thead>
                                         <tr>
                                             <th>
-                                                ID
+                                                ID Publicacion
                                             </th>
                                             <th>
                                                 Nombre
@@ -66,54 +66,33 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>
-                                                1
+                                        <tr th:each="comment : ${comment}">
+                                            <td th:text="${comment.id_publicacion}">
+                                               
+                                            </td>
+                                            <td th:text="${comment.nombre}">
+                                           
+                                            </td>
+                                            <td th:text="${comment.apellido}">
+                                               
+                                            </td>
+                                            <td th:text="${comment.correo}">
+                                               
+                                            </td>
+                                            <td th:text="${comment.comentario}">
+                                                
                                             </td>
                                             <td>
-                                                Herman Beck
-                                            </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $ 77.99
-                                            </td>
-                                            <td>
-                                                May 15, 2015
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-warning btn-rounded btn-fw btn-sm">
-                                                    <i class="mdi mdi-eye-off me-2"></i> Ocular
+                                                <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar comentario" onclick="Swal.fire(
+                                                    'Buen trabajo!',
+                                                    'Se ha ocultado la publicacion!',
+                                                    'info'
+                                                    )">                            
+                                                    <i class="mdi mdi-eye-off me-2"></i>
                                                 </button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>
-                                                Messsy Adam
-                                            </td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                $245.30
-                                            </td>
-                                            <td>
-                                                July 1, 2015
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-warning btn-rounded btn-fw btn-sm">
-                                                    <i class="mdi mdi-eye-off me-2"></i> Ocular
-                                                </button>
-                                            </td>
-                                        </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -149,38 +128,36 @@
                                             <td>12 May 2017</td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-outline-secondary  btn-success btn-sm">
-                                                        <abbr title="Activar comentario">
-                                                            <i class="mdi mdi-eye me-2"></i>
-                                                        </abbr>
+                                                    <button type="button" class="btn btn-outline-secondary  btn-success btn-sm" title="Activar publicacion" onclick="Swal.fire(
+                                                        'Buen trabajo!',
+                                                        'La publicacion ha sido activada!',
+                                                        'success'
+                                                        )">
+                                                        <i class="mdi mdi-eye me-2"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm">
-                                                        <abbr title="Eliminar comentario">
-                                                            <i class="mdi mdi-delete-forever me-2"></i>
-                                                        </abbr>
-                                                    </button>
+                                                    <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm" title="Eliminar publicacion" onclick="Swal.fire({
+                                                            title: 'Desea Eliminar esta publicacion?',
+                                                            text: 'Para eliminar haga click en aceptar de lo contrario en cancelar',
+                                                            icon: 'warning',
+                                                            showCancelButton: true,
+                                                            confirmButtonColor: '#3085d6',
+                                                            cancelButtonColor: '#d33',
+                                                            confirmButtonText: 'Si, borrar esto!'
+                                                            }).then((result) => {
+                                                            if (result.isConfirmed) {
+                                                            Swal.fire(
+                                                            'Eliminar!',
+                                                            'La publicacion ha sido eliminada',
+                                                            'success'
+                                                            )
+                                                            }
+                                                            })">
+                                                        <i class="mdi mdi-delete-forever me-2"></i>
+                                                     </button>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Messsy</td>
-                                            <td>53275532</td>
-                                            <td>15 May 2017</td>
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-outline-secondary  btn-success btn-sm">
-                                                        <abbr title="Activar comentario">
-                                                            <i class="mdi mdi-eye me-2"></i>
-                                                        </abbr>
-                                                    </button>
-                                                    <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm">
-                                                        <abbr title="Eliminar comentario">
-                                                            <i class="mdi mdi-delete-forever me-2"></i>
-                                                        </abbr>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                  
                                         </tbody>
                                     </table>
                                 </div>
@@ -199,10 +176,11 @@
     </div>
 </div>
 
-<script src="../../static/vendors/js/vendor.bundle.base.js"></script>
-<script src="../../static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<script src="../../static/js/off-canvas.js"></script>
-<script src="../../static/js/hoverable-collapse.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<script src="/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
 
 </body>
 
