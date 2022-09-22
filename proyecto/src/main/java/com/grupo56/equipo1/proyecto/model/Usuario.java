@@ -7,10 +7,10 @@ import javax.persistence.*;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     
     @Column(name = "nombre")
-    private String name;
+    private String nombre;
 
     @Column(name ="apellido")
     private String apellido;
@@ -19,45 +19,45 @@ public class Usuario {
     private String username;
 
     @Column(name="correo")
-    private String email;
+    private String correo;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "clave")
+    private String clave;
 
-    public Usuario(String name, String apellido, String username, String email, String password) {
-        this.name = name;
+    public Usuario(long id, String nombre, String apellido, String username, String correo, String clave) {
+        this.id = id;
+        this.nombre = nombre;
         this.apellido = apellido;
         this.username = username;
-        this.email = email;
-        this.password = password;
+        this.correo = correo;
+        this.clave = clave;
+    }
+
+    public Usuario(String nombre, String apellido, String username, String correo, String clave) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.username = username;
+        this.correo = correo;
+        this.clave = clave;
     }
 
     public Usuario() {
     }
 
-    public Usuario(int id, String name, String apellido, String username, String email, String password) {
-        this.id = id;
-        this.name = name;
-        this.apellido = apellido;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido() {
@@ -76,21 +76,21 @@ public class Usuario {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getPassword() {
-        return password;
+    public String getClave() {
+        return clave;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
-   
+        
 }

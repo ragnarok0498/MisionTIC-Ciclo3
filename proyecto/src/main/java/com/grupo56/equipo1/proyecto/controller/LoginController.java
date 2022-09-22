@@ -1,6 +1,19 @@
 package com.grupo56.equipo1.proyecto.controller;
 
 import org.springframework.stereotype.Controller;
+
+@Controller
+public class LoginController {
+
+   
+    
+}
+
+
+/*package
+ * 
+ * 
+ * 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,10 +23,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.grupo56.equipo1.proyecto.model.Credenciales;
 
-@Controller
-public class LoginController {
 
-   @RequestMapping("/login")
+
+
+ @RequestMapping("/login")
     public String RedirectLogin(){
 
         return "login";
@@ -40,5 +53,4 @@ public class LoginController {
         }
         
     }
-    
-}
+ */

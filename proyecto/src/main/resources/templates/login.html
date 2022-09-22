@@ -56,13 +56,13 @@
       <section class="inner-page">
         <div class="bg-white border rounded-5">
           <section class="w-100 p-4 d-flex justify-content-center pb-4">
-            <form style="width: 22rem" action="#" th:action="@{/check}" th:object="${credenciales}" method="post">
+            <form style="width: 22rem" action="#" th:action="@{/login}" th:object="${usuario}" method="post">
               <!-- Email input -->
               <br />
               <br />
               <div class="form-outline mb-4">
                 <label class="form-label" for="form2Example1" style="margin-left: 0px">Usuario</label>
-                <input type="email" id="form2Example1" class="form-control" th:field="*{email}" />
+                <input type="text" id="form2Example1" class="form-control" th:field="*{correo}" />
                 <div class="form-notch">
                   <div class="form-notch-leading" style="width: 9px"></div>
                   <div class="form-notch-middle" style="width: 88.8px"></div>
@@ -73,7 +73,7 @@
               <!-- Password input -->
               <div class="form-outline mb-4">
                 <label class="form-label" for="form2Example2" style="margin-left: 0px">Contraseña</label>
-                <input type="password" id="form2Example2" class="form-control" th:field="*{password}" />
+                <input type="password" id="form2Example2" class="form-control" th:field="*{clave}" />
                 <div class="form-notch">
                   <div class="form-notch-leading" style="width: 9px"></div>
                   <div class="form-notch-middle" style="width: 64px"></div>
