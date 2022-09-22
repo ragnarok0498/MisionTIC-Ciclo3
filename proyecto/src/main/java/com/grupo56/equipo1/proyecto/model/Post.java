@@ -1,7 +1,7 @@
 package com.grupo56.equipo1.proyecto.model;
 import javax.persistence.Entity;
 
-import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 
@@ -10,7 +10,8 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_publicacion;
+    private Long id_publicacion;
+
 
     @Column(name = "titulo")
     private String titulo;
