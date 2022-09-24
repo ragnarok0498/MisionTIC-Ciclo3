@@ -12,6 +12,6 @@ public class ImagenConfiguration implements WebMvcConfigurer{
 
         WebMvcConfigurer.super.addResourceHandlers(registry);
 
-        registry.addResourceHandler("/imagenes/**").addResourceLocations("file:/D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes");
+        registry.addResourceHandler("/imagenes/**").addResourceLocations("file:/D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes/");
     }
 }

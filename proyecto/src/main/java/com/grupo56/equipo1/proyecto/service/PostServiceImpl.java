@@ -23,7 +23,7 @@ public class PostServiceImpl implements PostService{
     @Override
     public List<Post> listarPosts() {
     
-        return postRepository.findAll(Sort.by("titulo"));
+        return postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
 

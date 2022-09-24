@@ -69,19 +69,18 @@
                       <tbody>
                       <tr th:each="post : ${posts}">
                         <td class="py-1">
-                          <img src="/images/faces/face1.jpg" alt="image"/>
+                          <img th:src="@{'/imagenes/'+ ${post.imagen}}" th:alt="${post.imagen}"/>
                         </td>
                         <td th:text="${post.titulo}">
-                          Herman Beck
+                     
                         </td>
                         <td th:text="${post.resumen}">
-                          resumen
+                     
                         </td>
                         <td th:text="${post.descripcion}">
-                          descripcion
+                        
                         </td>
-                        <td th:text="${post.idAdmin}">
-                          id admin
+                        <td th:text="${post.categoria}">
                         </td>
                         <td>
                           <div class="btn-group" role="group" aria-label="Basic example">

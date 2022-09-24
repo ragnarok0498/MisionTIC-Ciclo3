@@ -44,7 +44,7 @@ public class PostController {
     public String guardarPost(@RequestParam(name = "foto", required = false) MultipartFile foto, @ModelAttribute("post") Post post, RedirectAttributes flash){
        
         if(!foto.isEmpty()){
-            String ruta = "D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes";
+            String ruta = "D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes/";
 
             try {
                 Path rutaAbsoluta = Paths.get(ruta +"//"+ foto.getOriginalFilename());

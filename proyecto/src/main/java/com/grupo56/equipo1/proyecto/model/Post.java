@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_publicacion;
+    private long id;
 
 
     @Column(name = "titulo")
@@ -48,9 +48,9 @@ public class Post {
         this.imagen = imagen;
     }
 
-    public Post(long id_publicacion, String titulo, String resumen, String descripcion, String estado, String idAdmin,
+    public Post(long id, String titulo, String resumen, String descripcion, String estado, String idAdmin,
             String categoria, String imagen) {
-        this.id_publicacion = id_publicacion;
+        this.id = id;
         this.titulo = titulo;
         this.resumen = resumen;
         this.descripcion = descripcion;
@@ -61,11 +61,11 @@ public class Post {
     }
 
     public long getId_publicacion() {
-        return id_publicacion;
+        return id;
     }
 
-    public void setId_publicacion(long id_publicacion) {
-        this.id_publicacion = id_publicacion;
+    public void setId_publicacion(long id) {
+        this.id = id;
     }
 
     public String getTitulo() {

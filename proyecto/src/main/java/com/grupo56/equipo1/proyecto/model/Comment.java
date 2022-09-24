@@ -13,7 +13,7 @@ public class Comment {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_comentario;
+    private long id;
 
     @Column(name = "nombre")
     private String nombre;
@@ -36,9 +36,9 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(long id_comentario, String nombre, String apellido, String correo, String comentario, String estado,
+    public Comment(long id, String nombre, String apellido, String correo, String comentario, String estado,
             String id_publicacion) {
-        this.id_comentario = id_comentario;
+        this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -48,11 +48,11 @@ public class Comment {
     }
 
     public long getId_comentario() {
-        return id_comentario;
+        return id;
     }
 
-    public void setId_comentario(long id_comentario) {
-        this.id_comentario = id_comentario;
+    public void setId_comentario(long id) {
+        this.id = id;
     }
 
     public String getNombre() {
