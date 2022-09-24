@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_publicacion;
+    private long id_publicacion;
 
 
     @Column(name = "titulo")
@@ -22,32 +22,42 @@ public class Post {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "estado", nullable = true)
-    private String estado;
+    @Column(name = "estado")
+    private String estado = "0";
 
-    @Column(name = "id_admin")
+    @Column(name = "id_admin", nullable = true)
     private String idAdmin;
 
-    
-    public Post(String titulo, String resumen, String descripcion, String estado, String idAdmin) {
+    @Column(name= "categoria", nullable = true)
+    private String categoria;
+
+    @Column(name = "imagen")
+    private String imagen;
+
+    public Post() {
+    }
+
+    public Post(String titulo, String resumen, String descripcion, String estado, String idAdmin, String categoria,
+            String imagen) {
         this.titulo = titulo;
         this.resumen = resumen;
         this.descripcion = descripcion;
         this.estado = estado;
         this.idAdmin = idAdmin;
+        this.categoria = categoria;
+        this.imagen = imagen;
     }
 
-    public Post() {
-    }
-
-    public Post(long id_publicacion, String titulo, String resumen, String descripcion, String estado,
-            String idAdmin) {
+    public Post(long id_publicacion, String titulo, String resumen, String descripcion, String estado, String idAdmin,
+            String categoria, String imagen) {
         this.id_publicacion = id_publicacion;
         this.titulo = titulo;
         this.resumen = resumen;
         this.descripcion = descripcion;
         this.estado = estado;
         this.idAdmin = idAdmin;
+        this.categoria = categoria;
+        this.imagen = imagen;
     }
 
     public long getId_publicacion() {
@@ -98,5 +108,21 @@ public class Post {
         this.idAdmin = idAdmin;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+ 
 
 }

@@ -1,4 +1,4 @@
-package com.grupo56.equipo1.proyecto.controller;
+/*package com.grupo56.equipo1.proyecto.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

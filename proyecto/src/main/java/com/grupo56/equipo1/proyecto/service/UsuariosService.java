@@ -1,4 +1,4 @@
-package com.grupo56.equipo1.proyecto.service;
+/*package com.grupo56.equipo1.proyecto.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -9,7 +9,7 @@ public interface UsuariosService extends UserDetailsService {
 
     public Usuario guardarUser(RegistroUserDTO registroDTO);
 
-}
+}*/
 
 /**
  

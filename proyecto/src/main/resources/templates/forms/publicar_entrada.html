@@ -95,7 +95,8 @@
                   <p class="card-description">
                    Crear nueva publicación
                   </p>
-                  <form class="forms-sample" th:action="@{/posts/newpost}" th:object="${post}" method="post">
+                  <form class="forms-sample" th:action="@{/posts/newpost}" th:object="${post}" method="post" enctype="multipart/form-data">
+            
                     <div class="form-group">
                       <label for="inputTitulo">Titulo</label>
                       <input th:field="*{titulo}" type="text" class="form-control" id="inputTitulo" placeholder="Titulo">
@@ -110,21 +111,23 @@
                     </div>
                     <div class="form-group">
                       <label for="selectCategoria">Categorias</label>
-                        <select class="form-control" id="selectCategoria">
-                          <option>Fisica</option>
-                          <option>Quimica</option>
-                          <option>Biologia</option>
+                        <select th:field="*{categoria}" class="form-control" id="selectCategoria">
+                          <option value="Fisica">Fisica</option>
+                          <option value="Quimica">Quimica</option>
+                          <option value="Biologia">Biologia</option>
                         </select>
+
                       </div>
                     <div class="form-group">
                       <label>Subir imagen</label>
-                      <input type="file" name="img[]" class="file-upload-default">
+                      <input type="file" name ="foto"class="file-upload-default">
                       <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Adjuntar imagen">
+                        <input type="text" name="foto" class="form-control file-upload-info" disabled placeholder="Adjuntar imagen">
                         <span class="input-group-append">
                           <button class="file-upload-browse btn btn-danger" type="button">Seleccionar</button>
                         </span>
                       </div>
+                      
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Publicar</button>
                     <button class="btn btn-warning">Cancelar</button>

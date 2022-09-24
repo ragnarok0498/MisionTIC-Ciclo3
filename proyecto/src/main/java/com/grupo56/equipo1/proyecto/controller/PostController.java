@@ -1,11 +1,18 @@
 package com.grupo56.equipo1.proyecto.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.grupo56.equipo1.proyecto.model.Post;
 import com.grupo56.equipo1.proyecto.service.PostService;
@@ -34,8 +41,24 @@ public class PostController {
 
     //Creamos nuevo post
     @PostMapping("/posts/newpost")
-    public String guardarPost(@ModelAttribute("post") Post post){
+    public String guardarPost(@RequestParam(name = "foto", required = false) MultipartFile foto, @ModelAttribute("post") Post post, RedirectAttributes flash){
+       
+        if(!foto.isEmpty()){
+            String ruta = "D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes";
+
+            try {
+                Path rutaAbsoluta = Paths.get(ruta +"//"+ foto.getOriginalFilename());
+                Files.write(rutaAbsoluta, foto.getBytes());
+                post.setImagen(foto.getOriginalFilename());
+               
+
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        }
+
         postService.guardarPost(post);
+        flash.addFlashAttribute("success", "Publicación guardada con exito");
         return "redirect:/posts/newpost";
     } 
     

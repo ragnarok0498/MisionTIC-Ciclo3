@@ -1,4 +1,4 @@
-package com.grupo56.equipo1.proyecto.service;
+/*package com.grupo56.equipo1.proyecto.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -35,4 +35,4 @@ public class UsuarioServiceImpl implements UsuariosService {
     }
 
     
-}
+}*/

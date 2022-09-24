@@ -1,4 +1,4 @@
-package com.grupo56.equipo1.proyecto.segurity;
+/*package com.grupo56.equipo1.proyecto.segurity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -58,4 +58,4 @@ public class SegurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login?logout")
                 .permitAll();
     }
-}
+}*/

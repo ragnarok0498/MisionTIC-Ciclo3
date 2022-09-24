@@ -200,8 +200,8 @@
                         <p th:text="${post.resumen}">App</p>
                         <a class="details-link" title="Mas información">
                             <button onclick="Swal.fire({
-                                title: '<h4 th:text='${post.titulo}'></h4>',
-                                text: '<p th:text='${post.descripcion}'></p>',
+                                title: '<h4 th:text=${post.titulo}></h4>',
+                                html: '<p th:text=${post.descripcion}></p>',
                                 imageUrl: '/assets/img/portfolio/mecanica.jpg',
                                 imageWidth: 400,
                                 imageHeight: 200,
