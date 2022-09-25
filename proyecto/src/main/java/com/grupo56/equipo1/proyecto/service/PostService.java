@@ -16,4 +16,13 @@ public interface PostService {
     //Metodo para crear post
     public Post guardarPost(Post post);
     
+
+    //Metodo para editar
+    public Post obtenerPostId(Long id);
+
+    //Metodo para actualizar
+    public Post actualizarPost(Post post);
+
+    //Metodo para eliminar
+    public void eliminaPost(Long id);
 }

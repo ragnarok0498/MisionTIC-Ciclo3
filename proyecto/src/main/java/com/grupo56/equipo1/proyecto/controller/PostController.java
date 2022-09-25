@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -66,6 +67,31 @@ public class PostController {
         flash.addFlashAttribute("success", "Publicación guardada con exito");
         return "redirect:/posts/newpost";
     } 
+
+
+    //Editamos post
+    @GetMapping("/post/edit/{id}")
+    public String mostrarFormularioEdit(@PathVariable Long id, Model model){
+        
+        model.addAttribute("post", postService.obtenerPostId(id));
+
+        return "forms/publicar_entrada";
+
+    }
+
+    @PostMapping("/post/{id}")
+    public String actualizarPost(@PathVariable Long id, @ModelAttribute("post")Post post, Model model){
+    
+        Post postExiste = postService.obtenerPostId(id);
+        postExiste.setId_publicacion(id);
+        postExiste.setTitulo(post.getTitulo());
+        postExiste.setDescripcion(post.getDescripcion());
+        postExiste.setResumen(post.getResumen());
+        postExiste.setCategoria(post.getCategoria());
+
+        postService.actualizarPost(postExiste);
+        return "redirect:/posts";
+    }
     
 }
 

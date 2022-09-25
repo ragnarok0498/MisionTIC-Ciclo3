@@ -32,16 +32,29 @@ public class PostServiceImpl implements PostService{
     
         return postRepository.findByEstadoLessThanEqualOrderByIdDesc("0");
     }
-    
-
-
-
-
 
     
     @Override
     public Post guardarPost(Post post) {
         return postRepository.save(post);
+    }
+
+    @Override
+    public Post obtenerPostId(Long id) {
+
+        return postRepository.findById(id).get();
+    }
+
+    @Override
+    public Post actualizarPost(Post post) {
+
+        return postRepository.save(post);
+    }
+
+    @Override
+    public void eliminaPost(Long id) {
+
+        postRepository.deleteById(id);
     }
     
 }
