@@ -70,16 +70,16 @@ public class PostController {
 
 
     //Editamos post
-    @GetMapping("/post/edit/{id}")
+    @GetMapping("/posts/edit/{id}")
     public String mostrarFormularioEdit(@PathVariable Long id, Model model){
         
         model.addAttribute("post", postService.obtenerPostId(id));
 
-        return "forms/publicar_entrada";
+        return "forms/editar_entrada";
 
     }
 
-    @PostMapping("/post/{id}")
+    @PostMapping("/posts/{id}")
     public String actualizarPost(@PathVariable Long id, @ModelAttribute("post")Post post, Model model){
     
         Post postExiste = postService.obtenerPostId(id);
@@ -92,6 +92,14 @@ public class PostController {
         postService.actualizarPost(postExiste);
         return "redirect:/posts";
     }
+
+    //Eliminamos post
     
+    @GetMapping("/posts/{id}")
+    public String eliminarPost(@PathVariable Long id ){
+        postService.eliminaPost(id);
+
+        return "redirect:/posts";
+    }
 }
 

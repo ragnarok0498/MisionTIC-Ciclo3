@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title> Editar Publicacion </title>
+
+  <link rel="stylesheet" href="/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/vendors/select2/select2.min.css">
+  <link rel="stylesheet" href="/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/assets/img/ciencia.png" rel="icon" />
+
+</head>
+
+<body>
+  <div class="container-scroller">
+
+    <div th:replace="fragments/navbarPanel :: navbar">
+    </div>
+
+    <div class="container-fluid page-body-wrapper">
+
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="panel">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">Centro de control</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Publicaciones</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="publicar_entrada.html">Crear nueva entrada</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="posts">Modificar o eliminar datos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Comentarios</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="control_comentarios.html">Control comentarios</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-category">Informacion general</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Tablas</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="control_registros.html">Vista completa</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+
+
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Editar entrada</h4>
+                  <p class="card-description">
+                   Editar entrada
+                  </p>
+                  <form class="forms-sample" th:action="@{/posts/{id}(id=${post.id_publicacion})}" th:object="${post}" method="post" enctype="multipart/form-data">
+            
+                    <div class="form-group">
+                      <label for="inputTitulo">Titulo</label>
+                      <input th:field="*{titulo}" type="text" class="form-control" id="inputTitulo" placeholder="Titulo">
+                    </div>
+                    <div class="form-group">
+                      <label for="inputResumen">Resumen</label>
+                      <input th:field="*{resumen}" type="text" class="form-control" id="inputResumen" placeholder="Resumen">
+                    </div>
+                    <div class="form-group">
+                      <label for="textDescripcion">Descripcion</label>
+                      <textarea th:field="*{descripcion}" class="form-control" id="textDescripcion" rows="20" cols="50"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="selectCategoria">Categorias</label>
+                        <select th:field="*{categoria}" class="form-control" id="selectCategoria">
+                          <option value="Fisica">Fisica</option>
+                          <option value="Quimica">Quimica</option>
+                          <option value="Biologia">Biologia</option>
+                        </select>
+
+                      </div>
+                    <div class="form-group">
+                      <label>Subir imagen</label>
+                      <input type="file" name ="foto"class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" name="foto" class="form-control file-upload-info" disabled placeholder="Adjuntar imagen">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-danger" type="button">Seleccionar</button>
+                        </span>
+                      </div>
+                      
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Publicar</button>
+                    <button class="btn btn-warning">Cancelar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2022. Todos los derechos reservados.</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="/vendors/select2/select2.min.js"></script>
+  <script src="/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/hoverable-collapse.js"></script>
+  <script src="/js/file-upload.js"></script>
+  <script src="/js/typeahead.js"></script>
+  <script src="/js/select2.js"></script>
+
+</body>
+
+</html>
