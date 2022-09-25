@@ -116,7 +116,7 @@
                       <thead>
                         <tr>
                           <th>Titulo</th>
-                          <th>Resumen</th>
+                          <th>Descripción</th>
                           <th>Categoria</th>
                           <th>
                             <label class="badge badge-warning">
@@ -126,10 +126,10 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Jacob</td>
-                          <td>53275531</td>
-                          <td>12 May 2017</td>
+                        <tr th:each="postInactive : ${postsi}">
+                          <td th:text="${postInactive.titulo}">
+                            <td th:text="${postInactive.descripcion}">
+                              <td th:text="${postInactive.categoria}">
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-outline-secondary  btn-success btn-sm" title="Activar publicacion" onclick="Swal.fire(

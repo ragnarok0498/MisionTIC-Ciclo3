@@ -9,6 +9,10 @@ public interface PostService {
     //Metodo para listar los posts
     public List<Post> listarPosts();
 
+
+    //Metodo para listar posts inactivos
+    public List<Post> listarPostsInactive();
+
     //Metodo para crear post
     public Post guardarPost(Post post);
     

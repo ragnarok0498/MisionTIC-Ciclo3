@@ -26,6 +26,16 @@ public class PostServiceImpl implements PostService{
         return postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
+    //Listamos todos los posts
+    @Override
+    public List<Post> listarPostsInactive() {
+    
+        return postRepository.findByEstadoLessThanEqualOrderByIdDesc("0");
+    }
+    
+
+
+
 
 
     
