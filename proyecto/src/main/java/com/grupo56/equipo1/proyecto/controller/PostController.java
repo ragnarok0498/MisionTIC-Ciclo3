@@ -101,5 +101,19 @@ public class PostController {
 
         return "redirect:/posts";
     }
+
+    @GetMapping("/")
+    public String listarPostsIndex(Model modelo){
+        modelo.addAttribute("posts", postService.listarPosts());
+        modelo.addAttribute("postsi", postService.listarPostsInactive());
+        return "index";
+    }
+
+    @GetMapping("/entrada/{id}")
+    public String listarPostsEntrada(@PathVariable Long id, Model model){
+        model.addAttribute("post", postService.obtenerPostId(id));
+        return "forms/entrada";
+    }
+
 }
 

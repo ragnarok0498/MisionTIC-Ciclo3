@@ -28,60 +28,8 @@
 
     <div class="container-fluid page-body-wrapper">
 
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="panel">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item nav-category">Centro de control</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Publicaciones</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="publicar_entrada.html">Crear nueva entrada</a></li>
-              </ul>
-            </div>
-            <div class="collapse" id="form-elements">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="posts">Modificar o eliminar datos</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-              <i class="menu-icon mdi mdi-card-text-outline"></i>
-              <span class="menu-title">Comentarios</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="control_comentarios.html">Control comentarios</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item nav-category">Informacion general</li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tablas</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="tables">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="control_registros.html">Vista completa</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-
+      <div th:replace="fragments/sidebarPanel :: sidebar">
+      </div>
 
       <div class="main-panel">        
         <div class="content-wrapper">
@@ -129,7 +77,13 @@
                       </div>
                       
                     </div>
-                    <button type="submit" class="btn btn-primary me-2">Publicar</button>
+                    <button type="submit" class="btn btn-primary me-2" onclick="Swal.fire(
+                      'Buen trabajo!',
+                      'Se ha registrado una nueva entrada!',
+                      'success'
+                      )">
+                      Publicar
+                    </button>
                     <button class="btn btn-warning">Cancelar</button>
                   </form>
                 </div>

@@ -6,14 +6,14 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title> Panel Crear usuarios </title>
 
-    <link rel="stylesheet" href="/static/vendors/feather/feather.css">
-    <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/static/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="/static/vendors/typicons/typicons.css">
-    <link rel="stylesheet" href="/static/vendors/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link href="/static/assets/img/icono.ico" rel="icon" />
+    <link rel="stylesheet" href="/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="/assets/img/icono.ico" rel="icon" />
 
 </head>
 
@@ -34,9 +34,6 @@
                     <div class="row w-100 mx-0">
                         <div class="col-lg-4 mx-auto">
                             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                                <div class="brand-logo">
-                                    <img src="http://placehold.it/" alt="logo">
-                                </div>
                                 <h4>Crear nuevo usuario?</h4>
                                 <h6 class="font-weight-light"> Registrar nuevo usuario administrador</h6>
                                 <form class="pt-3" th:action="@{/newuser}" method="post" th:object="${usuario}">
@@ -65,15 +62,20 @@
                                         </div>
                                    </div> 
                                    <div class="mt-3">
-                                    <button type="submit" class="btn btn-success">Guardar</button>
+                                    <button type="submit" class="btn btn-success" onclick="Swal.fire(
+                                        'Buen trabajo!',
+                                        'Se ha registrado un nuevo usuario!',
+                                        'success'
+                                        )">
+                                        Guardar
+                                    </button>
                                    </div>
                                    <div class="text-center mt-4 font-weight-light">
                                     "Ya tienes una cuenta"
-                                    <a class="text-primary" href="#">Iniciar sesion</a>
+                                    <a class="text-primary" href="login">Iniciar sesion</a>
                                    </div>
                                 </form>
                             </div>
-
                             <div th:if=${param.exito}>
                                 <div class="alert alert-success"> Se ha registrado el usuario</div>
                                 <script>
@@ -104,11 +106,11 @@
     </div>
 </div>
 
-<script src="/static/vendors/js/vendor.bundle.base.js"></script>
-<script src="/static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<script src="/static/js/off-canvas.js"></script>
-<script src="/static/js/hoverable-collapse.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<script src="/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
 
 </body>
 
