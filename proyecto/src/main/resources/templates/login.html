@@ -35,7 +35,7 @@
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center">
         <h1 class="logo me-auto">
-          <a href="index.html">La ciencia de manera divertida</a>
+          <a href="#" th:href="@{/}">Iniciar sesión de Administrador</a>
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -49,20 +49,26 @@
           <ol>
             <li><a href="#" th:href="@{/}">Regresar</a></li>
           </ol>
-          <h2>Iniciar sesión de Administrador</h2>
         </div>
       </section>
 
       <section class="inner-page">
         <div class="bg-white border rounded-5">
           <section class="w-100 p-4 d-flex justify-content-center pb-4">
-            <form style="width: 22rem" action="#" th:action="@{/check}" th:object="${credenciales}" method="post">
+            <form style="width: 22rem" action="#" th:action="@{/login}" method="post">
               <!-- Email input -->
               <br />
+              <div th:if=${param.error}>
+                <div class="alert alert-danger">Usuario o contraseña invalidos</div>
+              </div>
+              <div th:if=${param.logout}>
+                <div class="alert alert-info"> Se ha cerrado la sesion</div>
+              </div>
               <br />
+
               <div class="form-outline mb-4">
-                <label class="form-label" for="form2Example1" style="margin-left: 0px">Usuario</label>
-                <input type="text" id="form2Example1" class="form-control" th:field="*{email}" />
+                <label class="form-label" for="username" style="margin-left: 0px">Nombre de usuario</label>
+                <input type="text" id="username" class="form-control" name="username" placeholder="Digite su email"/>
                 <div class="form-notch">
                   <div class="form-notch-leading" style="width: 9px"></div>
                   <div class="form-notch-middle" style="width: 88.8px"></div>
@@ -72,8 +78,8 @@
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <label class="form-label" for="form2Example2" style="margin-left: 0px">Contraseña</label>
-                <input type="password" id="form2Example2" class="form-control" th:field="*{password}" />
+                <label class="form-label" for="password" style="margin-left: 0px">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Digite su contraseña" />
                 <div class="form-notch">
                   <div class="form-notch-leading" style="width: 9px"></div>
                   <div class="form-notch-middle" style="width: 64px"></div>
@@ -81,9 +87,9 @@
                 </div>
               </div>
 
-              <!--Alertas-->
+              <!--Alertas
               <div th:if="${error != null}" class="alert alert-danger" role="alert">Datos incorrectos!</div>
-
+              -->
 
 
               <!-- 2 column grid layout for inline styling -->
@@ -105,9 +111,8 @@
               </div>
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4" >
-                Iniciar
-              </button>
+              <input type="submit" class="btn btn-primary btn-block mb-4" id="login-submit" value="Iniciar sesion" >
+              </input>
             </form>
           </section>
         </div>
@@ -153,57 +158,5 @@
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
-    <!-- Code injected by live-server -->
-    <script>
-      // <![CDATA[  <-- For SVG support
-      if ("WebSocket" in window) {
-        (function () {
-          function refreshCSS() {
-            var sheets = [].slice.call(document.getElementsByTagName("link"));
-            var head = document.getElementsByTagName("head")[0];
-            for (var i = 0; i < sheets.length; ++i) {
-              var elem = sheets[i];
-              var parent = elem.parentElement || head;
-              parent.removeChild(elem);
-              var rel = elem.rel;
-              if (
-                (elem.href && typeof rel != "string") ||
-                rel.length == 0 ||
-                rel.toLowerCase() == "stylesheet"
-              ) {
-                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
-                elem.href =
-                  url +
-                  (url.indexOf("?") >= 0 ? "&" : "?") +
-                  "_cacheOverride=" +
-                  new Date().valueOf();
-              }
-              parent.appendChild(elem);
-            }
-          }
-          var protocol =
-            window.location.protocol === "http:" ? "ws://" : "wss://";
-          var address =
-            protocol + window.location.host + window.location.pathname + "/ws";
-          var socket = new WebSocket(address);
-          socket.onmessage = function (msg) {
-            if (msg.data == "reload") window.location.reload();
-            else if (msg.data == "refreshcss") refreshCSS();
-          };
-          if (
-            sessionStorage &&
-            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
-          ) {
-            console.log("Live reload enabled.");
-            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
-          }
-        })();
-      } else {
-        console.error(
-          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
-        );
-      }
-      // ]]>
-    </script>
   </body>
 </html>

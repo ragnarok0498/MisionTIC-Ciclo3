@@ -1,5 +1,7 @@
 package com.grupo56.equipo1.proyecto.model;
 
+import java.util.Collection;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,41 +10,25 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    
+
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name ="apellido")
+    @Column(name = "apellido")
     private String apellido;
 
-    @Column(name="username")
+    @Column(name = "username")
     private String username;
 
-    @Column(name="correo")
-    private String correo;
+    @Column(name = "correo")
+    private String email;
 
     @Column(name = "clave")
     private String clave;
 
-    public Usuario(long id, String nombre, String apellido, String username, String correo, String clave) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.username = username;
-        this.correo = correo;
-        this.clave = clave;
-    }
-
-    public Usuario(String nombre, String apellido, String username, String correo, String clave) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.username = username;
-        this.correo = correo;
-        this.clave = clave;
-    }
-
-    public Usuario() {
-    }
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id"))
+    private Collection<Rol> roles;
 
     public long getId() {
         return id;
@@ -76,12 +62,12 @@ public class Usuario {
         this.username = username;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getClave() {
@@ -92,5 +78,35 @@ public class Usuario {
         this.clave = clave;
     }
 
-        
+    public Collection<Rol> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Rol> roles) {
+        this.roles = roles;
+    }
+
+    public Usuario(long id, String nombre, String apellido, String username, String email, String clave,
+            Collection<Rol> roles) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.username = username;
+        this.email = email;
+        this.clave = clave;
+        this.roles = roles;
+    }
+
+    public Usuario(String nombre, String apellido, String username, String email, String clave, Collection<Rol> roles) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.username = username;
+        this.email = email;
+        this.clave = clave;
+        this.roles = roles;
+    }
+
+    public Usuario() {
+    }
+
 }

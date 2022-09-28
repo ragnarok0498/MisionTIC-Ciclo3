@@ -48,7 +48,11 @@
                 <li>
                     <a class="getstarted scrollto" href="#" th:href="@{/login}">Iniciar sesion</a>
                 </li>
-
+                <!--
+                <li sec:authorize="hasRole('USER')">
+                    <a th:href="@{/logout}">Cerrar sesion</a>
+                </li>
+                -->
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
