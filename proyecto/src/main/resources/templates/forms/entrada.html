@@ -174,7 +174,11 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit">Enviar</button>
+                        <button type="submit" onclick="Swal.fire(
+                          'Buen trabajo!',
+                          'Se ha registrado un nuevo comentario, en breve un administrador lo revisara!',
+                          'success'
+                          )" value="Enviar"></button>
                     </div>
                 </form>
             </div>
@@ -195,5 +199,6 @@
     <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

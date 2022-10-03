@@ -1,10 +1,12 @@
 package com.grupo56.equipo1.proyecto.service;
 
 
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.grupo56.equipo1.proyecto.model.RegistroUserDTO;
 import com.grupo56.equipo1.proyecto.model.Usuario;
 
-public interface UsuariosService  {
+public interface UsuariosService extends UserDetailsService {
 
     public Usuario guardarUser(RegistroUserDTO registroDTO);
 

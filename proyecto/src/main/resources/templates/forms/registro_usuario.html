@@ -38,19 +38,19 @@
                                 <h6 class="font-weight-light"> Registrar nuevo usuario administrador</h6>
                                 <form class="pt-3" th:action="@{/newuser}" method="post" th:object="${usuario}">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" placeholder="Nombre" id="exampleInputUsername" th:field="*{nombre}">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Nombre" id="exampleInputUsername" th:field="*{nombre}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" placeholder="Apellido" id="exampleInputUsername" th:field="*{apellido}">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Apellido" id="exampleInputUsername" th:field="*{apellido}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" placeholder="Nombre de usuario" id="exampleInputUsername" th:field="*{username}">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Nombre de usuario" id="exampleInputUsername" th:field="*{username}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-lg" placeholder="Correo" id="exampleInputEmail1" th:field="*{correo}">
+                                        <input type="email" class="form-control form-control-lg" placeholder="Correo" id="exampleInputEmail1" th:field="*{email}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg" placeholder="Contraseña" id="exampleInputPassword1" th:field="*{clave}">
+                                        <input type="password" class="form-control form-control-lg" placeholder="Contraseña" id="exampleInputPassword1" th:field="*{clave}" required>
                                     </div>
                                     <div class="mb-4">
                                         <div class="form-check">

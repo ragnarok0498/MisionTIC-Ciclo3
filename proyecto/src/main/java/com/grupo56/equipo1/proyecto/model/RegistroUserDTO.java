@@ -6,7 +6,7 @@ public class RegistroUserDTO {
     private String nombre;
     private String apellido;
     private String username;
-    private String correo;
+    private String email;
     private String clave;
 
     
@@ -34,11 +34,11 @@ public class RegistroUserDTO {
     public void setUsername(String username) {
         this.username = username;
     }
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public String getClave() {
         return clave;
@@ -48,25 +48,25 @@ public class RegistroUserDTO {
     }
 
     
-    public RegistroUserDTO(Long id, String nombre, String apellido, String username, String correo, String clave) {
+    public RegistroUserDTO(Long id, String nombre, String apellido, String username, String email, String clave) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.username = username;
-        this.correo = correo;
+        this.email = email;
         this.clave = clave;
     }
 
-    public RegistroUserDTO(String nombre, String apellido, String username, String correo, String clave) {
+    public RegistroUserDTO(String nombre, String apellido, String username, String email, String clave) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.username = username;
-        this.correo = correo;
+        this.email = email;
         this.clave = clave;
     }
 
-    public RegistroUserDTO(String correo) {
-        this.correo = correo;
+    public RegistroUserDTO(String email) {
+        this.email = email;
     }
 
     public RegistroUserDTO() {

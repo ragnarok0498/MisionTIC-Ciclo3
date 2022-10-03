@@ -1,4 +1,4 @@
-/*package com.grupo56.equipo1.proyecto.segurity;
+package com.grupo56.equipo1.proyecto.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,12 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
 import com.grupo56.equipo1.proyecto.service.UsuariosService;
 
 @Configuration
 @EnableWebSecurity
-public class SegurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UsuariosService usuariosService;
@@ -40,22 +39,41 @@ public class SegurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(
-                "/registro**",
-                "/js/**",
-                "/css/**",
-                "/img/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .and()
-                .logout()
-                .invalidateHttpSession(true)
+
+        http
+                .authorizeRequests()
+                .antMatchers("/newuser/**", "/entrada/**", "/", "/comments/**",
+                        "/assets/**", "/css/**", "/js/**", "/vendors/**", "/img/**").permitAll()
+                // .antMatchers(HttpMethod.DELETE,"/api/v1/products/{productId}").hasRole(ADMIN.name())
+                // .antMatchers(HttpMethod.PUT, "/api/v1/products/{productId}").hasRole(ADMIN.name())
+                .antMatchers("/panel").hasRole("USER")
+                .antMatchers("/posts/**").hasRole("USER")
+                .anyRequest()
+                .authenticated()
+                .and().httpBasic() //OPCIONAL SE PUEDE BORRAR
+                .and().exceptionHandling().accessDeniedPage("/404")
+                .and().formLogin().loginPage("/login").defaultSuccessUrl("/panel",true).permitAll()
+                .and().logout().invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login?logout")
-                .permitAll();
+                .logoutSuccessUrl("/login?logout").permitAll();
+
     }
-}*/
+}
+
+/*
+ http.authorizeRequests().antMatchers(
+ "/newuser/**",
+ "/entrada/**",
+ "/assets/**",
+ "/css/**",
+ "/js/**",
+ "/vendors/**",
+ "/",
+ "/img/**").permitAll().anyRequest().authenticated()
+ .and().formLogin().loginPage("/login").permitAll()
+ .and().logout().invalidateHttpSession(true)
+ .clearAuthentication(true)
+ .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+ .logoutSuccessUrl("/login?logout").permitAll();
+ */

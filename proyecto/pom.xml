@@ -14,9 +14,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>proyecto</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
 		<java.version>11</java.version>
+		<springframework.version>5.7.3</springframework.version>
+		<springSecurity.version>5.7.3</springSecurity.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,20 +49,20 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
-		<!--
+		
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>5.7.3</version>
-		</dependency>-->
+			<version>${springSecurity.version}</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
-		<!--
+		
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>5.2.9.RELEASE</version>
-		</dependency>-->
+			<version>${springSecurity.version}</version>
+		</dependency>
 
 	</dependencies>
 
