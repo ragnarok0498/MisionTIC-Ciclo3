@@ -115,5 +115,17 @@ public class PostController {
         return "forms/entrada";
     }
 
+
+    //Activamos publicacion
+    @GetMapping("/posts/active/{id}")
+    public String actualizarEstadoPost(@PathVariable Long id, @ModelAttribute("post")Post post, Model model){
+    
+        Post postExiste = postService.obtenerPostId(id);
+        postExiste.setEstado("1");
+
+        postService.actualizarEstadoPost(postExiste);
+        return "redirect:/posts";
+    }
+
 }
 

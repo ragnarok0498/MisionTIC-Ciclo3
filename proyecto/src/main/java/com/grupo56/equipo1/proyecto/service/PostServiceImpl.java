@@ -23,7 +23,9 @@ public class PostServiceImpl implements PostService{
     @Override
     public List<Post> listarPosts() {
     
-        return postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        return postRepository.findByEstadoEqualsOrderByIdDesc("1");
+
+
     }
 
     //Listamos todos los posts
@@ -55,6 +57,13 @@ public class PostServiceImpl implements PostService{
     public void eliminaPost(Long id) {
 
         postRepository.deleteById(id);
+    }
+
+
+    @Override
+    public Post actualizarEstadoPost(Post post) {
+
+        return postRepository.save(post);
     }
     
 }

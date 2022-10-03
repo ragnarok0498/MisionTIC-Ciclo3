@@ -25,4 +25,7 @@ public interface PostService {
 
     //Metodo para eliminar
     public void eliminaPost(Long id);
+
+    //Metodo para cambiar de estado publicacion
+    public Post actualizarEstadoPost(Post post);
 }
