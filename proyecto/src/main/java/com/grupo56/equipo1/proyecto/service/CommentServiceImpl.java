@@ -14,13 +14,37 @@ public class CommentServiceImpl implements CommentService{
     @Autowired
     private CommentRepository commentRepository;
 
+    //Listamos todos los comentarios
     @Override
-    public List<Comment> listarComments(){
-        return commentRepository.findAll();
+    public List<Comment> listarAllComments(){
+        return commentRepository.findByEstadoEqualsOrderByIdDesc("1");
     }
-
+    //Listamos todos los comentario Inactivos
+    @Override
+    public List<Comment>listarCommentInactive() {
+        
+        return commentRepository.findByEstadoLessThanEqualOrderByIdDesc("0");
+    }
+    
     @Override
     public Comment guardarComment(Comment comment){
         return commentRepository.save(comment);
+    }
+
+        
+    @Override
+    public Object obtenerCommentId(Long id) {
+        
+        return commentRepository.findById(id).get();
+    }
+    @Override
+    public void eliminarComment(Long id) {
+        commentRepository.deleteById(id);
+        
+    }
+    @Override
+    public Comment actualizarEstadoComment(Comment comment) {
+        return commentRepository.save(comment);
+        
     }
 }

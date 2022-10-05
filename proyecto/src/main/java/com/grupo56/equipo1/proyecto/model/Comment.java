@@ -28,7 +28,7 @@ public class Comment {
     private String comentario;
     
     @Column(name = "estado")
-    private String estado;
+    private String estado ="0";
 
     @Column(name = "id_publicacion")
     private String id_publicacion;
