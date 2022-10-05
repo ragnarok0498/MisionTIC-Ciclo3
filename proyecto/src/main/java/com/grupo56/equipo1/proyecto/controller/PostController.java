@@ -125,5 +125,17 @@ public class PostController {
         return "redirect:/posts";
     }
 
+
+    //Desactivamos publicacion
+    @GetMapping("/posts/inactive/{id}")
+    public String actualizarIEstadoPost(@PathVariable Long id, @ModelAttribute("post")Post post, Model model){
+    
+        Post postExiste = postService.obtenerPostId(id);
+        postExiste.setEstado("0");
+
+        postService.actualizarEstadoPost(postExiste);
+        return "redirect:/posts";
+    }
+
 }
 

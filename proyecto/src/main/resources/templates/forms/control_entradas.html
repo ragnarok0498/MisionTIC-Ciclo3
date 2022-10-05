@@ -87,13 +87,12 @@
                             <a th:href="@{/posts/edit/{id}(id=${post.id_publicacion})}"><button type="button" class="btn btn-outline-secondary  btn-info btn-sm" title="Editar publicacion">                             
                                 <i class="mdi mdi-tooltip-edit me-2"></i>                          
                             </button></a>
-                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar publicacion" onclick="Swal.fire(
-                              'Buen trabajo!',
-                              'Se ha ocultado la publicacion!',
-                              'info'
-                            )">                            
+
+                            <a th:href="@{/posts/inactive/{id}(id=${post.id_publicacion})}">
+                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar publicacion">                            
                                 <i class="mdi mdi-eye-off me-2"></i>
                             </button>
+                          </a>
                           </div>
                         </td>
                       </tr>

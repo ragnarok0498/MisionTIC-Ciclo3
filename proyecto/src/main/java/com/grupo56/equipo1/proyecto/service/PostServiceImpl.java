@@ -65,5 +65,13 @@ public class PostServiceImpl implements PostService{
 
         return postRepository.save(post);
     }
+
+    @Override
+    public Post actualizarIEstadoPost(Post post) {
+
+        return postRepository.save(post);
+    }
+
+    
     
 }

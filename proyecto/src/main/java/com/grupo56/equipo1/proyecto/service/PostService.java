@@ -28,4 +28,7 @@ public interface PostService {
 
     //Metodo para cambiar de estado publicacion
     public Post actualizarEstadoPost(Post post);
+
+    //Metodo para cambiar de estado publicacion a inactiva
+    public Post actualizarIEstadoPost(Post post);
 }
