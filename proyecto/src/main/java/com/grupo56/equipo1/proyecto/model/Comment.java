@@ -30,7 +30,7 @@ public class Comment {
     @Column(name = "estado")
     private String estado ="0";
 
-    @Column(name = "id_publicacion")
+    @Column(name = "id_publicacion", nullable = true)
     private String id_publicacion;
 
     public Comment() {

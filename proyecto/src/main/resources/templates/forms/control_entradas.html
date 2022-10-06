@@ -89,7 +89,11 @@
                             </button></a>
 
                             <a th:href="@{/posts/inactive/{id}(id=${post.id_publicacion})}">
-                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar publicacion">                            
+                            <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar publicacion" onclick="Swal.fire(
+                               'Buen trabajo!',
+                               'Se ha ocultado la publicación!',
+                               'info'
+                               )">
                                 <i class="mdi mdi-eye-off me-2"></i>
                             </button>
                           </a>
@@ -132,7 +136,11 @@
                           <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <a th:href="@{/posts/active/{id}(id=${postInactive.id_publicacion})}">
-                              <button type="button" class="btn btn-outline-secondary  btn-success btn-sm" title="Activar publicacion">
+                              <button type="button" class="btn btn-outline-secondary  btn-success btn-sm" title="Activar publicacion" onclick="Swal.fire(
+                                 'Buen trabajo!',
+                                 'Se ha activado la publicacion!',
+                                 'success'
+                                 )">
                                 <i class="mdi mdi-eye me-2"></i>
                               </button>
                             </a>

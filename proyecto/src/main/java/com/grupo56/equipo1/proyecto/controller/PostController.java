@@ -4,6 +4,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import com.grupo56.equipo1.proyecto.model.Comment;
+import com.grupo56.equipo1.proyecto.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,9 @@ public class PostController {
     
     @Autowired
     private PostService postService;
+
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/posts")
     public String listarPosts(Model modelo){
@@ -48,8 +53,8 @@ public class PostController {
     public String guardarPost(@RequestParam(name = "foto", required = false) MultipartFile foto, @ModelAttribute("post") Post post, RedirectAttributes flash){
        
         if(!foto.isEmpty()){
-            String ruta = "D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes/";
-
+            //String ruta = "D:/Programacion/Proyecto_Ciclo_3/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes/";
+            String ruta = "C:/Users/willv/Documents/1. Proyecto/MisionTIC-UTP-Grupo-56/proyecto/src/main/resources/imagenes/";
             try {
                 Path rutaAbsoluta = Paths.get(ruta +"//"+ foto.getOriginalFilename());
                 Files.write(rutaAbsoluta, foto.getBytes());
@@ -63,7 +68,7 @@ public class PostController {
 
         postService.guardarPost(post);
         flash.addFlashAttribute("success", "Publicación guardada con exito");
-        return "redirect:/posts/newpost";
+        return "redirect:/posts";
     } 
 
 
@@ -103,16 +108,17 @@ public class PostController {
     @GetMapping("/")
     public String listarPostsIndex(Model modelo){
         modelo.addAttribute("posts", postService.listarPosts());
-        modelo.addAttribute("postsi", postService.listarPostsInactive());
         return "index";
     }
 
     @GetMapping("/entrada/{id}")
     public String listarPostsEntrada(@PathVariable Long id, Model model){
         model.addAttribute("post", postService.obtenerPostId(id));
+        model.addAttribute("comments", commentService.listarAllComments());
+
+
         return "forms/entrada";
     }
-
 
     //Activamos publicacion
     @GetMapping("/posts/active/{id}")

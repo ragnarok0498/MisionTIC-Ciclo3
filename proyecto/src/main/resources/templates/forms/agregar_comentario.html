@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Comentarios</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/assets/img/icono.ico" rel="icon" />
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/img/ciencia.png" rel="icon" />
+</head>
+
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+
+<header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto">
+            <a th:href="@{/}">Agregar comentario</a>
+        </h1>
+    </div>
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="#agg_comentario">Agregar Comentario</a></li>
+            <li><a class="nav-link scrollto" href="#comentario">Comentarios</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+</header>
+
+<main id="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a th:href="@{/}">Regresar</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="agg_comentario" class="contact">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Enviar comentario</h2>
+                <p>
+                    ...
+                </p>
+            </div>
+
+
+            <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <form th:action="@{/entrada/newcomment)" th:object="${comment}"method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Nombre</label>
+                            <input th:field="*{nombre}" type="text" name="name" class="form-control" id="name" required/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastname">Apellido</label>
+                            <input th:field="*{apellido}" type="text" name="name" class="form-control" id="lastname" required/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Correo</label>
+                            <input th:field="*{correo}" type="email" class="form-control" name="email" id="email" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Comentario</label>
+                        <textarea th:field="*{commentario}" class="form-control" name="message" rows="8" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Cargando</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">
+                            Your message has been sent. Thank you!
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" value="Enviar" class="btn btn-primary me-2"
+                               onclick="Swal.fire(
+                                'Buen trabajo!',
+                                'Se ha registrado un nuevo comentario, en breve un administrador lo revisara!',
+                                'success'
+                                )">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- Seccion de comentarios fin-->
+
+    <section id="comentario" class="why-us section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Comentarios</h2>
+                <div class="row">
+                    <div class="col-lg-10 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1">
+                        <div class="content">
+                            <p>
+                                Aprende, experimenta y comparte.
+                            </p>
+                        </div>
+                        <div class="accordion-list">
+                            <ul>
+                                <li th:each="comment : ${comments}">
+                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">
+                                        <span> Realizado por: </span><span th:text="${comment.nombre}" ></span> <span th:text="${comment.apellido}"></span>
+                                        <i class="bx bx-chevron-down icon-show"></i>
+                                        <i class="bx bx-chevron-up icon-close"></i>
+                                    </a>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                        <p th:text="${comment.comentario}">
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+</main>
+<div th:replace="fragments/footer :: footer">
+</div>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<script src="/assets/vendor/aos/aos.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

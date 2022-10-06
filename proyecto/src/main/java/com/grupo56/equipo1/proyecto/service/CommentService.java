@@ -11,12 +11,13 @@ public interface CommentService {
     public Comment guardarComment(Comment comment);
 
     //Metodo para listar comentarios inactivos
-    public Object listarCommentInactive();
+    public List<Comment> listarCommentInactive();
 
     public void eliminarComment(Long id);
 
-    public Object obtenerCommentId(Long id);
+    public Comment obtenerCommentId(Long id);
 
     public Comment actualizarEstadoComment(Comment comment);
-    
+
+    public Comment actualizarIEstadoComment(Comment comment);
 }

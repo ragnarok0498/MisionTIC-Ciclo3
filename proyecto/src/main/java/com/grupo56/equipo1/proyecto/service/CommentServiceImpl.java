@@ -21,7 +21,7 @@ public class CommentServiceImpl implements CommentService{
     }
     //Listamos todos los comentario Inactivos
     @Override
-    public List<Comment>listarCommentInactive() {
+    public List<Comment> listarCommentInactive() {
         
         return commentRepository.findByEstadoLessThanEqualOrderByIdDesc("0");
     }
@@ -33,7 +33,7 @@ public class CommentServiceImpl implements CommentService{
 
         
     @Override
-    public Object obtenerCommentId(Long id) {
+    public Comment obtenerCommentId(Long id) {
         
         return commentRepository.findById(id).get();
     }
@@ -46,5 +46,10 @@ public class CommentServiceImpl implements CommentService{
     public Comment actualizarEstadoComment(Comment comment) {
         return commentRepository.save(comment);
         
+    }
+
+    @Override
+    public Comment actualizarIEstadoComment(Comment comment){
+        return  commentRepository.save(comment);
     }
 }

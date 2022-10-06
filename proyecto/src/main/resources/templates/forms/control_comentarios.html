@@ -83,6 +83,7 @@
                                                     
                                                 </td>
                                                 <td>
+                                                    <a th:href="@{/comments/inactive/{id}(id=${comment.id_comentario})}">
                                                     <button type="button" class="btn btn-outline-secondary  btn-warning btn-sm" title="Ocultar comentario" onclick="Swal.fire(
                                                         'Buen trabajo!',
                                                         'Se ha ocultado el comentario!',
@@ -90,6 +91,7 @@
                                                         )">                            
                                                         <i class="mdi mdi-eye-off me-2"></i>
                                                     </button>
+                                                    </a>
                                                 </td>
                                             </tr>
 
@@ -130,35 +132,20 @@
                                                                 <td th:text="${commentInactive.comentario}">
                                                     <td>
                                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <a th:href="@{/comments/active/{id}(id=${commentInactive.id_publicacion})}">
+                                                        <a th:href="@{/comments/active/{id}(id=${commentInactive.id_comentario})}">
                                                         <button type="button" class="btn btn-outline-secondary  btn-success btn-sm" title="Activar comentario" onclick="Swal.fire(
                                                                 'Buen trabajo!',
                                                                 'El comentario ya es visible!',
                                                                 'success'
                                                                 )">
-                                                                    <i class="mdi mdi-eye me-2"></i>
+                                                            <i class="mdi mdi-eye me-2"></i>
                                                         </button>   
                                                     </a>
-                                                    
-                                                            <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm" title="Eliminar comentario" onclick="Swal.fire({
-                                                                    title: 'Desea Eliminar este comentario?',
-                                                                    text: 'Para eliminar haga click en aceptar de lo contrario en cancelar',
-                                                                    icon: 'warning',
-                                                                    showCancelButton: true,
-                                                                    confirmButtonColor: '#3085d6',
-                                                                    cancelButtonColor: '#d33',
-                                                                    confirmButtonText: 'Si, borrar esto!'
-                                                                    }).then((result) => {
-                                                                    if (result.isConfirmed) {
-                                                                    Swal.fire(
-                                                                    'Eliminar!',
-                                                                    'El comentario ha sido eliminado',
-                                                                    'success'
-                                                                    )
-                                                                    }
-                                                                    })">
+                                                        <a th:href="@{/comments/{id}(id=${commentInactive.id_comentario})}">
+                                                            <button type="button" class="btn btn-outline-secondary  btn-danger btn-sm" title="Eliminar comentario">
                                                                 <i class="mdi mdi-delete-forever me-2"></i>
                                                             </button>
+                                                        </a>
                                                         </div>
                                                     </td>
                                                 </tr>

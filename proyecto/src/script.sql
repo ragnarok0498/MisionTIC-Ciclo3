@@ -18,7 +18,7 @@ CREATE TABLE publicaciones (
 	resumen	VARCHAR(250) NOT NULL,
 	descripcion	TEXT NOT NULL,
 	categoria 	VARCHAR(50) NOT NULL,
-	estado	BOOLEAN NOT NULL,
+	estado	VARCHAR(2) NOT NULL,
 	imagen	LONGBLOB,
 	FOREIGN KEY(id_admin) REFERENCES administrador(id),
 	PRIMARY KEY(id)
@@ -31,7 +31,7 @@ CREATE TABLE comentarios (
 	apellido	VARCHAR(30) NOT NULL,
 	correo	VARCHAR(100) NOT NULL,
 	comentario	VARCHAR(250) NOT NULL,
-	estado	VARCHAR(30) NOT NULL,
+	estado	VARCHAR(2) NOT NULL,
 	FOREIGN KEY(id_publicacion) REFERENCES publicaciones(id),
 	PRIMARY KEY(id)
 );
