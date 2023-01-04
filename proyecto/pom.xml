@@ -17,7 +17,7 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<springframework.version>5.7.3</springframework.version>
+		<springframework.version>5.7.4</springframework.version>
 		<springSecurity.version>5.7.3</springSecurity.version>
 	</properties>
 

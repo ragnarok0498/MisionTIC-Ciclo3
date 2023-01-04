@@ -13,6 +13,9 @@
 #             | -> ...
 #
 
+proyecto/node_modules
+proyecto/package-lock.json
+
 # Java
 *.class
 
